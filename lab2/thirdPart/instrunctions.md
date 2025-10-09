@@ -14,7 +14,7 @@
 
     ![[Pasted image 20251009193413.png]]
 
-3. Create a new html file called `menu.html` where the menu page will be written. Use the following text:
+3. Create a new html file called `menu.html` in the root directory where the menu page will be written. Use the following markup:
 
 ```html
 <h1>Black Goose Bistro Gallery</h1>
@@ -31,3 +31,7 @@ We start our day at the crack of dawn to bake our own muffins, bread, and dinner
 <p>Our chef works with local fisherman to pick the freshest the sea has to offer for our daily seafood special. Our Roast Cod Caponata with Roasted Potatoes is an old favorite with our regulars.</p>
 
 ```
+
+**Don't forget to add the other necessary markups (`{html} <head>`, `{html} <body>`, etc. )**
+
+4. add all the links to the `menu` page so they work correctly
