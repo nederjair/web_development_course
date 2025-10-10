@@ -6,22 +6,19 @@
     - `recipes` folder (the folder where all the recipes are contained) with all the recipes your page uses including `tapenade.html` and your personal recipe
     - `images` folder (the folder where all the images for your page are contained) with all the images that your page uses
 
-    You should have something like the following:
-
-    ![[Pasted image 20251009191700.png]]
 
 2. Create a new folder called `gallery` inside the `lab2Part3` folder where you will copy all the images of the folder `gallery` that is provided to you from TUIS. You should have something like the following:
 
-    ![[Pasted image 20251009193413.png]]
+    ![[fileTree.png]]
 
-3. Create a new html file called `menu.html` in the root directory where the menu page will be written. Use the following markup:
+3. Create a new html file called `gallery.html` in the root directory where the `gallery` page will be written. Use the following markup text:
 
 ```html
 <h1>Black Goose Bistro Gallery</h1>
 <p>Not is our food good, it's also good-looking! Our patrons often stop to admire our fare with a quick Instagram before digging in. We've collected a few of our favorite shots here.</p>
 
 <h2>Our Baked Goods</h2>
-<p><a href="bread.html"><img src="thumbnails/bread-200.jpg" alt="close-up of sliced rustic bread"></a><br>
+<p><a href="gallery/bread.html"><img src="thumbnails/bread-200.jpg" alt="close-up of sliced rustic bread"></a><br>
 We start our day at the crack of dawn to bake our own muffins, bread, and dinner rolls. Loaves not used that day are donated to the local food shelter. </p>
 
 <h2>Our Burgers</h2>
@@ -32,6 +29,22 @@ We start our day at the crack of dawn to bake our own muffins, bread, and dinner
 
 ```
 
+The markup `{html} <p><a href="gallery/bread.html"><img src="thumbnails/bread-200.jpg" alt="close-up of sliced rustic bread"></a><br> We start our day at the crack of dawn to bake our own muffins, bread, and dinner rolls. Loaves not used that day are donated to the local food shelter. </p>` puts a thumbnail image at the beggining of the paragraph, the URL of the image is provided in the `src` attribute of the `img` element, a description of the image is added with the `alt` attribute. The `height` and `width` attribute are added to tell the browser how much space to leave in the layout.
+
 **Don't forget to add the other necessary markups (`{html} <head>`, `{html} <body>`, etc. )**
 
-4. add all the links to the `menu` page so they work correctly
+4. add all the links including the link to the `gallery` page (in the nav section) so they work correctly, do this for all the pages
+
+5. create an html file in the `gallery` folder called `bread.html` using the following mark up text:
+
+```html
+<h1>Gallery: Baked Goods</h1>
+<p><img src="photos/bread-800.jpg" alt="close-up of sliced rustic bread" width="800" height="600"></p>
+<p><a href="../index.html">[Back to Gallery]</a></p>
+```
+
+This file will show the full size photo of the baked goods (breads) as well as show a link to come back to the menu. **Don't forget to add the other necessary markups (`{html} <head>`, `{html} <body>`, etc. )**
+
+6. do the same with the `burger` and `catch of the day` parts in the `gallery` page so they show a thumbnail and when you click on it it takes you to each individual page of every dish.
+
+7. repeat this process for the recipes page, find your custom images.
