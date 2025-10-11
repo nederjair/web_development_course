@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Новости</title>
+    <style>
+      body {
+        background-color: #faf2e4;
+        margin: 0 10%;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: serif;
+        font-weight: normal;
+        text-transform: uppercase;
+        border-bottom: 1px solid #57b1dc;
+        margin-top: 30px;
+      }
+
+      h2 {
+        color: #d1633c;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img src="images/blackgoose.png" alt="logo" /><br />Новости «Черный
+        гусь»
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="gallery.html">Галерея</a></li>
+          <li><a href="bistro_news.html">Новости</a></li>
+          <li>
+            Рецепты
+            <ul>
+              <li><a href="recipes/tapenade.html">Тапенаде</a></li>
+              <li><a href="recipes/tapenade.html">Емпанадас</a></li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="https://esystem.rudn.ru/user/profile.php?id=128158"
+              target="new"
+              >Контакты</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <article>
+      <h2>Летнее меню</h2>
+      <time datetime="2017-06-18">Опубликовано BGB, 18 июня 2017 г.</time>
+      <p>
+        Наш шеф-повар составил идеальное меню для летних месяцев. Загляните к
+        нам, чтобы попробовать эти закуски и основные блюда, пока дни ещё длинны
+      </p>
+
+      <section id="appetizers">
+        <h3>Закуски</h3>
+        <dl>
+          <dt>Кулечки из чёрной фасоли</dt>
+          <dd>
+            Острая чёрная фасоль и смесь мексиканских сыров, завёрнутые в листы
+            теста фило и запечённые до золотистой корочки.
+            <span class="price">3,95 $</span>
+          </dd>
+          <dt class="newitem">
+            Юго-западный «Наполеон» с крабом &mdash; <strong>новинка!</strong>
+          </dt>
+          <dd>
+            Слои лёгкого крабового мяса, сальса из фасоли и кукурузы, а также
+            наши лепёшки ручной работы. <span class="price">7,95 $</span>
+          </dd>
+        </dl>
+      </section>
+      <section id="maincourses">
+        <h3>Основные блюда</h3>
+        <dl>
+          <dt>Кебабы сате из креветок с арахисовым соусом.</dt>
+          <dd>
+            Шашлычки из креветок, маринованных в лемонграссе, чесноке и рыбном
+            соусе, обжаренные на гриле до совершенства. Подаются с острым
+            арахисовым соусом и рисом жасмин.
+            <span class="price">12,95 $</span>
+          </dd>
+          <dt class="newitem">
+            Курица-гриль Джерк с жареными плантанами &mdash;
+            <strong>новинка!</strong>
+          </dt>
+          <dd>
+            Нежная курица, медленно обжаренная на вертеле, с пряным и ароматным
+            соусом Джерк, подается с жареными плантанами и свежим манго.
+            <span class="price">12,95 $</span>
+          </dd>
+        </dl>
+      </section>
+    </article>
+
+    <article>
+      <h2>Низкокалорийно и медленно</h2>
+
+      <time datetime="2016-11-15">Опубликовано BGB, 15 ноября 2016 г.</time>
+      <p>
+        На этой неделе я <em>чрезвычайно</em> взволнован новым методом
+        приготовления под названием <dfn><i>sous vide</i></dfn
+        >. При <i>sous vide</i> приготовлении продукт (обычно в вакуумной
+        упаковке) погружается в водяную баню, температура которой точно
+        соответствует желаемой. В своей книге
+        <cite>Cooking for Geeks</cite> Джефф Поттер описывает это как
+        <q>приготовление при ультранизкой температуре.</q>
+      </p>
+
+      <p>
+        В следующем месяце мы будем подавать лосося
+        <b><i>sous vide</i> с голландским соусом с укропом</b>. Чтобы
+        забронировать место за столом шеф-повара, свяжитесь с нами до
+        <time datetime="20161130">30 ноября</time>.
+      </p>
+    </article>
+
+    <footer>
+      <div class="about">
+        <p>
+          Местоположение: <br />
+          Baker’s Corner, Seekonk, MA
+        </p>
+
+        <p>
+          Часы работы: <br />
+          со вторника по субботу, <time datetime="21:00">с 11:00</time>
+          <time datetime="23:00">до 23:00</time>
+        </p>
+      </div>
+
+      <p>
+        <small
+          >Все материалы защищены авторским правом, &copy; 2025, Black Goose
+          Bistro</small
+        >
+      </p>
+    </footer>
+  </body>
+</html>
