@@ -70,3 +70,5 @@ table { border: 1px solid black; }
 12. Finally, give the table row and column groups for greater sematic clarity. There is no `tfoot` in this table. There are two column groups: one column for headers, the rest for data. Use the `span` attribute (no need for individual column identification).
 
 13. Save your work and open the file in a browser. The table should look just like the one on this page (`figure 1`). If not, go back and adjust your markup. If you’re stumped, the final markup for this exercise is provided in the materials folder.
+
+14. Add the just created table to the site navigation (`nav` element) as a link, name it `statistics`

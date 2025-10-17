@@ -4,7 +4,7 @@ After covering how to establish the basic structure of an HTML document, how to 
 
 <div class="page-break" style="page-break-before: always;"></div>
 
-## HOW TO USE TABLES
+### HOW TO USE TABLES
 
 HTML tables were created for instances when you need to add tabular material (data arranged into rows and columns) to a web page. Tables may be used to organize schedules, product comparisons, statistics, or other types of information. Note that “data” doesn’t necessarily mean numbers. A table cell may contain any sort of information, including numbers, text elements, and even images and multimedia objects.
 
