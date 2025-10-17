@@ -16,11 +16,10 @@ In visual browsers, the arrangement of data in rows and columns gives readers an
 
 Here is a small table with three rows and three columns that lists nutritional information.
 
-Menu Item            | Calories | Fat (g) 
- --                  | --       | --
-Chicken noodle soup  | 120      | 2    
-Caesar salad         | 400      | 26    
-
+| Menu Item           | Calories | Fat (g) |
+| ------------------- | -------- | ------- |
+| Chicken noodle soup | 120      | 2       |
+| Caesar salad        | 400      | 26      |
 
 Figure 1 reveals the structure of this table according to the HTML table model. All of the table’s content goes into cells that are arranged into rows. Cells contain either header information (titles for the columns, such as “Calories”) or data, which may be any sort of content.
 
@@ -36,7 +35,26 @@ Now let’s look at how those parts translate into elements
 
 <div class="page-break" style="page-break-before: always;"></div>
 
+What we don’t see are column elements. The number of columns in a table is implied by the number of cells in each row. This is one of the things that make HTML tables potentially tricky. Rows are easy if you want the table to have three rows, just use three `tr` elements. Columns are different. For a table with four columns, you need to make sure that every row has four `td` or `th` elements.
 
-What we don’t see are column elements. The number of columns in a table is implied by the number of cells in each row. This is one of the things that make HTML tables potentially tricky. Rows are easy—if you want the table to have three rows, just use three tr elements. Columns are different. For a table with four columns, you need to make sure that every row has four td or th elements. (There’s more to the column story, which I cover in the section “Row and Column Groups” later in this chapter.)
+Written out in a source document, the markup for the table in figure looks like the following sample. It is common to stack the th and td elements in order to make them easier to find in the source. This does not affect how the browser renders them.
 
-
+```html
+<table>
+  <tr>
+    <th>Menu item</th>
+    <th>Calories</th>
+    <th>Fat (g)</th>
+  </tr>
+  <tr>
+    <td>Chicken noodle soup</td>
+    <td>120</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Caesar salad</td>
+    <td>400</td>
+    <td>26</td>
+  </tr>
+</table>
+```
