@@ -234,6 +234,59 @@ It’s important to note that although the characters entered in the password fi
 ```
 ![[fig4.png]]
 
+#### Search, email, telephone numbers, and URLs
+Until HTML5, the only way to collect email addresses, telephone numbers, URLs, or search terms was to insert a generic text input field. In HTML5, the email, tel, url, and search input types give the browser a heads-up as to what type of information to expect in the field. These input types use the same attributes as the generic text input type described earlier (name, maxlength, minlength, size, and value), as well as a number of other attributes.
+
+
+All of these input types are typically displayed as single-line text inputs. But browsers that support them can do some interesting things with the extra semantic information. For example, Safari on iOS uses the input type to provide a keyboard well suited to the entry task, such as the keyboard featuring a Search button for the search input type or a “.com” button when the input type is set to url (FIGURE 9-5). Browsers usually add a one-click “clear field” icon (usually a little X) in search fields. A supporting browser could check the user’s input to see that it is valid—for example, by making sure text entered in an email input follows the standard email address structure (in the past, you needed JavaScript for validation). For example, the Opera (FIGURE 9-6) and Chrome browsers display a warning if the input does not match the expected format.
+
+![[fig5.png]]
+
+Although email, search, telephone, and URL inputs are well supported by upto-date browsers, there may be inconsistencies in the way they are handled.
+
+Older browsers, such as Opera Mini and any version of Internet Explorer prior to 11, do not recognize them at all, but will display the default generic text input instead, which works perfectly fine.
+
+#### Drop-Down Suggestions
+`{html} <datalist>…</datalist>`
+*Drop-down menu input*
+
+The datalist element allows the author to provide a drop-down menu of suggested values for any type of text input. It gives the user some shortcuts to select from, but if none are selected, the user can still type in their own text. Within the datalist element, suggested values are marked up as option elements. Use the list attribute in the input element to associate it with the id of its respective datalist.
+
+In the following example (FIGURE 9-7), a datalist suggests several education level options for a text input:
+
+```html
+<p>Education completed: <input type="text" list="edulevel"
+name="education">
+<datalist id="edulevel">
+<option value="High School">
+<option value="Bachelors Degree">
+<option value="Masters Degree">
+<option value="PhD">
+</datalist>
+```
+As of this writing, browser support for datalists remains spotty. Chrome and Opera support it, but there is a bug that makes datalists unscrollable (i.e., unusable) if the list is too long, so it is best used for short lists of options. IE11 and Edge have buggy implementations, and Safari and iOS don’t support it at all. The good news is if it is unsupported, browsers present a simple text input, which is a perfectly acceptable fallback. You could also use a JavaScript polyfill to create datalist functionality.
+
+#### Submit and Reset Buttons
+`{html icon}<input type="submit">`
+*Submits the form data to the server*
+`{html icon}<input type="reset">`
+*Resets the form controls to their default settings*
+
+There are several kinds of buttons that can be added to web forms. The most fundamental is the submit button. When clicked or tapped, the submit button immediately sends the collected form data to the server for processing.
+
+A reset button returns the form controls to the state they were in when the form initially loaded. In other words, resetting the form doesn’t simply clear all the fields.
+
+Both submit and reset buttons are added via the input element. As mentioned earlier, because these buttons have specific functions that do not include the entry of data, they are the only form control elements that do not require the name attribute, although it is OK to add one if you need it.
+
+Submit and reset buttons are straightforward to use. Just place them in the appropriate place in the form, which in most cases is at the very end. By default, the submit button displays with the label “Submit” or “Submit Query,” and the reset button is labeled “Reset.” You can change the text on the button by using the value attribute, as shown in the reset button in this example (FIGURE 9-8).
+
+```html
+<p><input type="submit"> <input type="reset" value="Start over"></p>
+```
+
+The reset button is not used in forms as commonly as it used to be. That is because in contemporary form development, we use JavaScript to check the validity of form inputs along the way, so users get feedback as they go along.
+
+With thoughtful design and assistance, fewer users should get to the end of the form and need to reset the whole thing. Still, it is a good function to be aware of.
 
 ```bash
 GET
