@@ -1,13 +1,14 @@
-# Starting the pizza order form
-Here’s the scenario. You are the web designer in charge of creating an online pizza ordering form for Black Goose Bistro. The owner has handed you a sketch (FIGURE 9-9) of the form’s content. There are sticky notes from the programmer with information about the script and variable names you need to use.
-
+# FORMS
 ![[fig1.png]]
-
 ![[fig2.png]]
+
+Here’s the scenario. You are the web designer in charge of creating an online pizza ordering form for Black Goose Bistro. The owner has handed you a sketch (FIGURE 9-9) of the form’s content. There are sticky notes from the programmer with information about the script and variable names you need to use.
 
 Your challenge is to turn the sketch into a functional form. I’ve given you a head start by creating a bare-bones document with text content and minimal markup and styles. 
 
-# Instructions
+# INSTRUCTIONS
+
+## Starting the pizza order form
 
 1. Copy the folder of the previous laboratory work and name it `lab_forms`, then open it with `vscode`.
 
@@ -116,4 +117,31 @@ HINTS: Choose the most appropriate input type for each entry field. Be sure to n
 
 9. Once the document looks right, take it for a spin by entering some information and submitting the form. You should get a response like the one shown in FIGURE 9-10.
 
+## Adding radio buttons and checkboxes
+The next section of the Black Goose Bistro pizza ordering form uses radio buttons and checkboxes for selecting pizza options.
 
+10. In the “Design Your Dream Pizza” section, there are lists of Crust and Toppings options. The Crust options should be radio buttons because pizzas have only one crust. Insert a radio button before each option. Follow this example for the remaining crust options:
+
+```html
+<li><input type="radio" name="crust" value="white"> Classic white</li>
+```
+11. Mark up the Toppings options as you did the Crust options, but this time, the type should be checkbox. Be sure the variable name for each is `toppings[]`, and that the “Red sauce” option is preselected (checked), as noted on the sketch.
+
+12. Save the document and check your work by opening it in a browser to make sure it looks right; then submit the form to make sure it’s functioning properly.
+
+## Adding a menu
+The only other control that needs to be added to the order form is a pull-down menu for selecting the number of pizzas to have delivered.
+
+13. Insert a select menu element with the option to order between 1 and 6 pizzas: 
+
+```html
+<p>How many pizzas:
+<select name="pizzas"
+size="1">
+<option>1</option>
+<-- more options here -->
+</select>
+</p>
+```
+
+14. Save the document and check it in a browser. You can submit the form, too, to be sure that it’s working. You should get the “Thank You” response page listing all of the information you entered in the form.

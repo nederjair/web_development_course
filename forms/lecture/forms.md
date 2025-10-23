@@ -285,8 +285,118 @@ Submit and reset buttons are straightforward to use. Just place them in the appr
 ```
 
 The reset button is not used in forms as commonly as it used to be. That is because in contemporary form development, we use JavaScript to check the validity of form inputs along the way, so users get feedback as they go along.
-
+### Radio and Checkbox Buttons
 With thoughtful design and assistance, fewer users should get to the end of the form and need to reset the whole thing. Still, it is a good function to be aware of.
+
+Both checkbox and radio buttons make it simple for your visitors to choose from a number of provided options. They are similar in that they function like little on/off switches that can be toggled by the user and are added with the input element. They serve distinct functions, however.
+
+A form control made up of a collection of radio buttons is appropriate when only one option from the group is permitted—in other words, when the selections are mutually exclusive (such as “Yes or No,” or “Pick-up or Delivery”). When one radio button is “on,” all of the others must be “off,” sort of the way buttons used to work on old radios: press one button in, and the rest pop out.
+
+When checkboxes are grouped together, however, it is possible to select as many or as few from the group as desired. This makes them the right choice for lists in which more than one selection is OK.
+
+#### Radio buttons
+Radio buttons are added to a form via the input element with the type attribute set to “radio.” Here is the syntax for a minimal radio button:
+
+```html
+<input type="radio" name="variable" value="value">
+```
+The name attribute is required and plays an important role in binding multiple radio inputs into a set. When you give a number of radio button inputs the same name value (“age” in the following example), they create a group of mutually exclusive options. In this example, radio buttons are used as an interface for users to enter their age group. A person can’t belong to more than one age group, so radio buttons are the right choice. FIGURE 9-11 shows how radio buttons are rendered in the browser.
+
+```html
+<p>How old are you?</p>
+<ol>
+<li><input type="radio" name="age" value="under24" checked> under
+24</li>
+<li><input type="radio" name="age" value="25-34"> 25 to 34</li>
+<li><input type="radio" name="age" value="35-44"> 35 to 44</li>
+<li><input type="radio" name="age" value="over45"> 45+</li>
+</ol>
+```
+Notice that all of the input elements have the same variable name (“age”), but their values are different. Because these are radio buttons, only one button can be checked at a time, and therefore, only one value will be sent to the server for processing when the form is submitted. You can decide which button is checked when the form loads by adding the checked attribute to the input element. In this example, the button next to “under 24” will be checked when the page loads.
+
+#### Checkbox buttons
+Checkboxes are added via the input element with its type set to checkbox. As with radio buttons, you create groups of checkboxes by assigning them the same name value. The difference, as we’ve already noted, is that more than one checkbox may be checked at a time. The value of every checked button will be sent to the server when the form is submitted. Here’s an example of a group of checkbox buttons used to indicate musical interests; FIGURE 9-11 shows how they look in the browser:
+
+```html
+<p>What type of music do you listen to?</p>
+<ul>
+<li><input type="checkbox" name="genre" value="punk" checked> Punk
+rock</li>
+<li><input type="checkbox" name="genre" value="indie" checked> Indie
+rock</li>
+<li><input type="checkbox" name="genre" value="hiphop"> Hip Hop</li>
+<li><input type="checkbox" name="genre" value="rockabilly">
+Rockabilly</li>
+</ul>
+```
+Checkboxes don’t necessarily need to be used in groups, of course. In this example, a single checkbox is used to allow visitors to opt in to special promotions. The value of the control will be passed along to the server only if the user checks the box.
+```html
+<p><input type="checkbox" name="OptIn" value="yes"> Yes, send me news and special promotions by email.</p>
+```
+Checkbox buttons also use the checked attribute to make them preselected when the form loads.
+
+### Menus
+Another way to provide a list of choices is to put them in a drop-down or scrolling menu. Menus tend to be more compact than groups of buttons and checkboxes.
+
+You add both drop-down and scrolling menus to a form with the select element. Whether the menu pulls down or scrolls is the result of how you specify its size and whether you allow more than one option to be selected. Let’s take a look at both menu types.
+
+#### Drop-down menus
+The select element displays as a drop-down menu (also called a pull-down menu) by default when no size is specified or if the size attribute is set to 1. In pull-down menus, only one item may be selected. Here’s an example (shown in FIGURE 9-12):
+```html
+<p>What is your favorite 80s band?
+<select name="EightiesFave">
+<option>The Cure</option>
+<option>Cocteau Twins</option>
+<option>Tears for Fears</option>
+<option>Thompson Twins</option>
+<option value="EBTG">Everything But the Girl</option>
+<option>Depeche Mode</option>
+<option>The Smiths</option>
+<option>New Order</option>
+</select>
+</p>
+```
+You can see that the select element is just a container for a number of option elements. The content of the chosen option element is what gets passed to the web application when the form is submitted. If, for some reason, you want to send a different value than what appears in the menu, use the value attribute to provide an overriding value. For example, if someone selects “Everything But the Girl” from the sample menu, the form submits the value “EBTG” for the “EightiesFave” variable. For the others, the content between the option tags will be sent as the value.
+
+#### Scrolling menus
+To make the menu display as a scrolling list, simply specify the number of lines you’d like to be visible using the size attribute. This example menu has the same options as the previous one, except it has been set to display as a scrolling list that is six lines tall (FIGURE 9-13):
+
+```html
+<p>What 80s bands did you listen to?
+<select name="EightiesBands" size="6" multiple>
+<option>The Cure</option>
+<option>Cocteau Twins</option>
+<option selected>Tears for Fears</option>
+<option selected>Thompson Twins</option>
+<option value="EBTG">Everything But the Girl</option>
+<option>Depeche Mode</option>
+<option>The Smiths</option>
+<option>New Order</option>
+</select>
+</p>
+```
+You may notice a few minimized attributes tucked in there. The multiple attribute allows users to make more than one selection from the scrolling list. Note that pull-down menus do not allow multiple selections; when the browser detects the multiple attribute, it displays a small scrolling menu automatically by default.
+
+Use the selected attribute in an option element to make it the default value for the menu control. Selected options are highlighted when the form loads. The selected attribute can be used with pull-down menus as well.
+
+### Grouping menu options
+You can use the optgroup element to create conceptual groups of options. The required label attribute provides the heading for the group. FIGURE 9-14 shows how option groups are rendered in modern browsers.
+
+```html
+<select name="icecream" size="7" multiple>
+<optgroup label="traditional">
+<option>vanilla</option>
+<option>chocolate</option>
+</optgroup>
+<optgroup label="fancy">
+<option>Super praline</option>
+<option>Nut surprise</option>
+<option>Candy corn</option>
+</optgroup>
+</select>
+```
+
+
 
 ```bash
 GET
