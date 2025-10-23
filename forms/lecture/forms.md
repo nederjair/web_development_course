@@ -395,8 +395,41 @@ You can use the optgroup element to create conceptual groups of options. The req
 </optgroup>
 </select>
 ```
+### File Selection Control
 
+```html
+<input type="file">
+```
+*File selection field*
 
+Web forms can collect more than just data. They can also be used to transmit external documents from a user’s hard drive. For example, a printing company could use a web form to upload artwork for a business card order. A magazine could use a form to collect digital photos for a photo contest. 
+
+The file selection control makes it possible for users to select a document from the hard drive to be submitted with the form data. We add it to the form by using the input element, with its type set to file. The markup sample here (FIGURE 9-15) shows a file selection control used for photo submissions:
+```html
+<form action="/client.php" method="POST" enctype="multipart/form-data">
+<label>Send a photo to be used as your online icon <em>(optional)
+</em><br>
+<input type="file" name="photo"></label>
+</form>
+```
+The file upload widget varies slightly by browser and operating system, but it is generally a button that allows you to access the file organization system on your computer (FIGURE 9-15).
+
+It is important to note that when a form contains a file selection input element, you must specify the encoding type (enctype) as multipart/form-data in the form element and use the POST method.
+
+The file input type has a few attributes. The accept attribute gives the browser a heads-up on what file types may be accepted (audio, video, image, or some other format identified by its media type). Adding the multiple attributes allows multiple files to be selected for upload. The required attribute, as it says, requires a file to be selected.
+
+### Hidden Controls
+There may be times when you need to send information to the form processing application that does not come from the user. In these instances, you can use a hidden form control that sends data when the form is submitted, but is not visible when the form is displayed in a browser. 
+
+Hidden controls are added via the input element with the type set to hidden. Its sole purpose is to pass a name/value pair to the server when the form is submitted. In this example, a hidden form element is used to provide the location of the appropriate thank-you document to display when the transaction is complete:
+
+```html
+<input type="hidden" name="success-link" value="http://www.example.com/thankyou.html">
+```
+### Date and Time Controls
+If you’ve ever booked a hotel or a flight online, you’ve no doubt used a little calendar widget for choosing the date. Chances are, that little calendar was created with JavaScript. HTML5 introduced six new input types that make date and time selection widgets part of a browser’s standard built-in display capabilities, just as they can display checkboxes, pop-up menus, and other widgets today.
+
+As of this writing, the date and time pickers are implemented on only a few browsers (Chrome, Microsoft Edge, Opera, Vivaldi, and Android), but on non-supporting browsers, the date and time input types display as a perfectly usable text-entry field instead. FIGURE 9-16 shows date and time widgets as rendered in Chrome on macOS.
 
 ```bash
 GET
