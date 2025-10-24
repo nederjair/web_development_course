@@ -1,4 +1,4 @@
-:# ФОРМЫ
+# ФОРМЫ
 
 Вот сценарий. Вы — веб-дизайнер, ответственный за создание формы онлайн-заказа пиццы для Black Goose Bistro. Владелец передал вам набросок (РИСУНОК 1) содержимого формы. Есть стикеры от программиста с информацией о скрипте и именах переменных, которые вам нужно использовать.
 
@@ -81,7 +81,7 @@
 </html>
 ```
 
-4. Put everything after the intro `paragraph` into a `form` element. The programmer has left a note specifying the action and the method to use for this `form`. The resulting `form` element should look like this:
+4. Поместите всё, что идет после вводного абзаца, в элемент `form`. Программист оставил заметку с указанием действия (action) и метода (method), которые следует использовать для этой формы. Получившийся элемент `form` должен выглядеть следующим образом:
 
 ```html
 <form action="http://www.blackgoosebistro.com/pizza.php" method="POST">
@@ -89,68 +89,67 @@
 </form>
 ```
 
-5. In this exercise, we’ll work on the “Your Information” section of the form. Start with the first four short `text-entry` form controls that are marked up appropriately as an unordered list. Here’s the first one; you insert the other three:
+5. В этом упражнении мы поработаем с разделом «Ваша информация» формы. Начните с первых четырех коротких элементов управления формой `текстового ввода`, которые размечены как ненумерованный список. Вот первый из них; вам нужно вставить остальные три:
 
 ```html
-<li>Name: <input type="text" name="customername"></li>
+<li>Имя: <input type="text" name="customername"></li>
 ```
 
-HINTS: Choose the most appropriate `input` type for each entry field. Be sure to name the `input` elements as specified in the programmer’s note.
+ПОДСКАЗКИ: Выберите наиболее подходящий тип `input` для каждого поля ввода. Обязательно назовите элементы `input` так, как указано в заметке программиста.
 
-6. After “Delivery instructions:” add a line break and a multiline text area. Because we aren’t writing a style sheet for this form, use markup to make it four rows long and 60 characters wide (in the real world, `CSS` is preferable because it gives you more finetuned control):
-
+6. После текста «Инструкции по доставке:» добавьте разрыв строки и многострочное текстовое поле. Поскольку мы не пишем таблицу стилей для этой формы, используйте разметку, чтобы задать ему высоту в 4 строки и ширину в 60 символов (в реальных условиях предпочтительнее использовать `CSS`, так как он предоставляет более точный контроль):
 ```html
-        <li>
-          Delivery instructions:<br />
-          <textarea
-            name="instructions"
-            rows="4"
-            cols="60"
-            maxlength="400"
-            placeholder="No more than 400 characters long"
-          ></textarea>
-        </li>
+<li>
+Инструкции по доставке:<br />
+<textarea
+name="instructions"
+rows="4"
+cols="60"
+maxlength="400"
+placeholder="Не более 400 символов"
+></textarea>
+</li>
 ```
 
-7. Add the submit and reset buttons at the end, just before the `</form>` tag. Note that they’ve asked us to change the text on the submit button.
-
+7. Добавьте кнопки отправки и сброса в конце, прямо перед закрывающим тегом `</form>`. Обратите внимание, что нас попросили изменить текст на кнопке отправки.
 ```html
-<p><input type="submit" value="Bring me a pizza!"><input type="reset"></p>
+<p><input type="submit" value="Принесите мне пиццу!"><input type="reset"></p>
 ```
 
-8.  Now, save the document and open it in a browser. The parts that are finished should generally match FIGURE 2. If they don’t, then you have some more work to do.
+8. Теперь сохраните документ и откройте его в браузере. Готовые элементы должны в целом соответствовать рисунку 2. Если это не так, вам ещё предстоит над чем поработать.
 
-9. Once the document looks right, take it for a spin by entering some information and submitting the form. You should get a response like the one shown in FIGURE 3.
+9. Когда документ будет выглядеть правильно, проверьте его, введя информацию и отправив форму. Вы должны получить ответ, подобный показанному на рис. 3.
 
 ![[fig3.png]]
-**FIGURE 3**
+**РИС. 3**
 
-## Adding radio buttons and checkboxes
-The next section of the Black Goose Bistro pizza ordering form uses radio buttons and checkboxes for selecting pizza options.
+## Добавление переключателей и флажков
+В следующем разделе формы заказа пиццы в Black Goose Bistro используются переключатели и флажки для выбора вариантов пиццы.
 
-10. In the “Design Your Dream Pizza” section, there are lists of Crust and Toppings options. The Crust options should be radio buttons because pizzas have only one crust. Insert a radio button before each option. Follow this example for the remaining crust options:
-
-```html
-<li><input type="radio" name="crust" value="white"> Classic white</li>
-```
-11. Mark up the Toppings options as you did the Crust options, but this time, the type should be checkbox. Be sure the variable name for each is `toppings[]`, and that the “Red sauce” option is preselected (checked), as noted on the sketch.
-
-12. Save the document and check your work by opening it in a browser to make sure it looks right; then submit the form to make sure it’s functioning properly.
-
-## Adding a menu
-The only other control that needs to be added to the order form is a pull-down menu for selecting the number of pizzas to have delivered.
-
-13. Insert a select `menu` element with the option to order between 1 and 6 pizzas: 
+10. В разделе «Создай пиццу своей мечты» есть списки вариантов теста и начинки. Варианты теста должны быть переключателями, поскольку у пиццы только один вид теста. Добавьте переключатель перед каждым вариантом. Для остальных вариантов корочки следуйте этому примеру:
 
 ```html
-      <p>
-        How many pizzas:
-        <select name="pizzas" size="1">
-          <option>1</option>
-        </select>
-      </p>
+<li><input type="radio" name="crust" value="white"> Классический белый</li>
 ```
 
-14. Save the document and check it in a browser. You can submit the form, too, to be sure that it’s working. You should get the “Thank You” response page listing all of the information you entered in the form.
+11. Разметьте параметры начинки так же, как и параметры основы, но на этот раз тип должен быть checkbox. Убедитесь, что имя переменной для каждой из них — `toppings[]`, а параметр «Красный соус» предварительно выбран (отмечен галочкой), как указано на эскизе.
 
-15. Add the new created form as a service to your black goose bistro restaurant (add it to the `nav` element in the navigation menu)
+12. Сохраните документ и проверьте свою работу, открыв его в браузере, чтобы убедиться в корректности; затем отправьте форму, чтобы убедиться в её корректной работе.
+
+## Добавление меню
+Единственный другой элемент управления, который нужно добавить в форму заказа, — это выпадающее меню для выбора количества пицц для доставки.
+
+13. Вставьте элемент select `menu` с возможностью заказа от 1 до 6 пицц:
+
+```html
+<p>
+Сколько пицц:
+<select name="pizzas" size="1">
+<option>1</option>
+</select>
+</p>
+```
+
+14. Сохраните документ и проверьте его в браузере. Вы также можете отправить форму, чтобы убедиться в её работоспособности. Вы должны получить страницу с благодарностью, содержащую всю информацию, введённую вами в форму.
+
+15. Добавьте созданную форму как услугу в ваш ресторан Black Goose Bistro (добавьте её к элементу `nav` в меню навигации).
