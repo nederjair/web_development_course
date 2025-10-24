@@ -1,31 +1,31 @@
-# FORMS
+:# ФОРМЫ
 
-Here’s the scenario. You are the web designer in charge of creating an online pizza ordering form for Black Goose Bistro. The owner has handed you a sketch (FIGURE 1) of the form’s content. There are sticky notes from the programmer with information about the script and variable names you need to use.
+Вот сценарий. Вы — веб-дизайнер, ответственный за создание формы онлайн-заказа пиццы для Black Goose Bistro. Владелец передал вам набросок (РИСУНОК 1) содержимого формы. Есть стикеры от программиста с информацией о скрипте и именах переменных, которые вам нужно использовать.
 
 ![[fig1.png]]
-**FIGURE 1**
+**РИСУНОК 1**
 
-Your challenge is to turn the sketch into a functional form (FIGURE 2). I’ve given you a head start by creating a bare-bones document with text content and minimal markup and styles. 
+Ваша задача — превратить этот набросок в рабочую форму (РИСУНОК 2). Я дал вам фору, создав базовый документ с текстовым содержимым, минимальной разметкой и стилями.
 
 ![[fig2.png]]
-**FIGURE 2**
+**РИСУНОК 2**
 
-# INSTRUCTIONS
+# ИНСТРУКЦИИ
 
-## Starting the pizza order form
+## Начало работы с формой заказа пиццы
 
-1. Copy the folder of the previous laboratory work and name it `lab_forms`, then open it with `vscode`.
+1. Скопируйте папку из предыдущей лабораторной работы и назовите её `lab_forms`, затем откройте её в `vscode`.
 
-2. Create a new file in the folder `lab_forms` and call it `pizza.html`.
+2. Создайте новый файл в папке `lab_forms` и назовите его `pizza.html`.
 
-3. Copy the next `html` markup text into `pizza.html`.
+3. Скопируйте следующий `html`-код в файл `pizza.html`.
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Blackstone Bistro: Pizza-on-Demand</title>
+    <title>Blackstone Bistro: Пицца по требованию</title>
     <style type="text/css">
       ol,
       ul {
@@ -35,48 +35,47 @@ Your challenge is to turn the sketch into a functional form (FIGURE 2). I’ve g
   </head>
 
   <body>
-    <h1>Blackstone Bistro | Pizza-on-Demand</h1>
+    <h1>Blackstone Bistro | Пицца по требованию</h1>
 
     <p>
-      Our 12" wood-fired pizzas are available for delivery. Build your custom
-      pizza and we'll deliver it within an hour.
+      Наши 30-сантиметровые пиццы, приготовленные в дровяной печи, доступны для доставки. Соберите свою собственную пиццу, и мы доставим её в течение часа.
     </p>
 
-    Your Information
+    Ваша информация
     <ul>
-      <li>Name:</li>
-      <li>Address:</li>
-      <li>Telephone Number:</li>
+      <li>Имя:</li>
+      <li>Адрес:</li>
+      <li>Номер телефона:</li>
       <li>Email:</li>
-      <li>Delivery instructions:</li>
+      <li>Инструкции по доставке:</li>
     </ul>
 
-    <h2>Design Your Dream Pizza:</h2>
+    <h2>Спроектируйте пиццу своей мечты:</h2>
 
-    <p>Pizza specs</p>
+    <p>Характеристики пиццы</p>
     <p></p>
 
-    <p>Crust <em>(Choose one)</em>:</p>
+    <p>Основание <em>(Выберите одно)</em>:</p>
     <ul>
-      <li>Classic white</li>
-      <li>Multigrain</li>
-      <li>Cheese-stuffed crust</li>
-      <li>Gluten-free</li>
+      <li>Классическое белое</li>
+      <li>Мультизлаковое</li>
+      <li>С сыром по краям</li>
+      <li>Без глютена</li>
     </ul>
 
-    <p>Toppings <em>(Choose as many as you want)</em>:</p>
+    <p>Топпинги <em>(Выберите сколько угодно)</em>:</p>
     <ul>
-      <li>Red sauce</li>
-      <li>White sauce</li>
-      <li>Mozzarella Cheese</li>
-      <li>Pepperoni</li>
-      <li>Mushrooms</li>
-      <li>Peppers</li>
-      <li>Anchovies</li>
+      <li>Красный соус</li>
+      <li>Белый соус</li>
+      <li>Сыр Моцарелла</li>
+      <li>Пепперони</li>
+      <li>Грибы</li>
+      <li>Перец</li>
+      <li>Анчоусы</li>
     </ul>
 
-    <p>Number</p>
-    <p>How many pizzas:</p>
+    <p>Количество</p>
+    <p>Сколько пицц:</p>
     <p></p>
   </body>
 </html>
