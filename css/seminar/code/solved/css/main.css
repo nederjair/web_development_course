@@ -5,19 +5,3 @@ p {
   font-size: large;
   font-family: sans-serif;
 }
-
-/* header styles */
-header {
-  color: white;
-  background: url(../imgs/croissants_banner.jpg) no-repeat center center;
-  background-size: cover;
-  text-align: center;
-}
-
-
-nav ul li {
-  font-size: .8em;
-  text-transform: uppercase;
-  letter-spacing: .2em;
-}
-

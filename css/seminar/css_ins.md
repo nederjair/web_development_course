@@ -11,7 +11,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cooking with Nada Surf</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cooking.css">
   </head>
 
   <body>
@@ -73,7 +73,7 @@
 
 5. Create a new folder called `css`, this folder will contain all the css documents.
 
-6. Inside the new created folder (`css`) create a new `CSS` document called `main.css`. Add the next styling rules to the document:
+6. Inside the new created folder (`css`) create a new `CSS` document called `cooking.css`. Add the next styling rules to the document:
 
 ```css
 h1 {
@@ -127,7 +127,7 @@ margin: 0 12px;
   <meta charset="UTF-8">
   <title>Black Goose Bakery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bakery.css">
   <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
 </head>
 
@@ -182,7 +182,7 @@ margin: 0 12px;
 </html>
 ```
 
-14. add the following styling rules so your navigation menu gets centered
+15. Inside the `css` folder  create a new `CSS` document called `bakery.css`. Add the following styling rules so your navigation menu gets centered and a bakground picture gets added (and other notizable changes)
 
 ```css
 /* header styles */
@@ -193,11 +193,54 @@ header {
   text-align: center;
 }
 ```
-
-15. add the following styling rules to the `main.css` file so 
+16. Add the following styling rules to the `cooking.css` file to eliminate the circles in the unordered list.
 
 ```css
-/* link styles */
-a:link, a:visited { color: #DC6903; }
-a:focus, a:hover, a:active { color: #F9AB33; }
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 ```
+Save the document and look at the changes in a browser.
+
+16. Turn that ul element into a flexbox by setting its display to flex. As a result, all of the li elements become flex items. Because we want rows and no wrapping, the default values for flex-direction and flex-wrap are fine, so the properties can be omitted:
+
+```css
+nav ul {
+…
+display: flex;
+}
+```
+Save the document and look at the changes in a browser. You should see that the links are lined up tightly in a row, which is an improvement.
+
+17. Now we can work on the appearance of the links. Start by making the a elements in the nav list items display as block elements instead of inline. Give them 1px rounded borders, padding within the borders (.5em top and bottom, 1em left and right), and .5em margins to give them space and to open up the brown navigation bar.
+
+```css
+nav ul li a {
+  display: block;
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+}
+```
+
+18. We want the navigation menu to be centered in the width of the nav section for that add the following declaration for the nav ul element:
+
+```css
+nav ul {
+    …
+    justify-content: center;
+}
+```
+
+19. Add the following rules to change the body of the page
+
+```css
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 100%;
+  background-color: lightgray;
+  margin: 0;
+}```
