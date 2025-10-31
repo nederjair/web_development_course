@@ -1,4 +1,5 @@
 ## Simple CSS adjustments
+
 1. duplicate (copy and paste) the folder from the previous laboratory work and name it `lab_css`.
 
 2. open the just created folder `lab_css` with `vscode`.
@@ -281,7 +282,7 @@ save the file and take a look at the page in the browser.
 ```css
 /* nav styles */
 nav, footer {
-  font-family: verdana, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: #783F27;
 }
 nav ul li a:link, nav ul li a:visited {
@@ -419,7 +420,7 @@ h2 {
 
 ### Improve the navigation menu
 
-16. Add the following styling rules to the `bakery.css` file to eliminate the circles in the unordered list.
+26. Add the following styling rules to the `bakery.css` file to eliminate the circles in the unordered list.
 
 ```css
 nav ul {
@@ -430,17 +431,19 @@ nav ul {
 ```
 Save the document and look at the changes in a browser.
 
-16. Turn that ul element into a flexbox by setting its display to flex. As a result, all of the li elements become flex items. Because we want rows and no wrapping, the default values for flex-direction and flex-wrap are fine, so the properties can be omitted:
+27. Turn that ul element into a flexbox by setting its display to flex. As a result, all of the li elements become flex items. Because we want rows and no wrapping, the default values for flex-direction and flex-wrap are fine, so the properties can be omitted:
 
 ```css
 nav ul {
-…
-display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 ```
 Save the document and look at the changes in a browser. You should see that the links are lined up tightly in a row, which is an improvement.
 
-17. Now we can work on the appearance of the links. Start by making the a elements in the nav list items display as block elements instead of inline. Give them 1px rounded borders, padding within the borders (.5em top and bottom, 1em left and right), and .5em margins to give them space and to open up the brown navigation bar.
+28. Now we can work on the appearance of the links. Start by making the a elements in the nav list items display as block elements instead of inline. Give them 1px rounded borders, padding within the borders (.5em top and bottom, 1em left and right), and .5em margins to give them space and to open up the brown navigation bar.
 
 ```css
 nav ul li a {
@@ -452,21 +455,14 @@ nav ul li a {
 }
 ```
 
-18. We want the navigation menu to be centered in the width of the nav section for that add the following declaration for the nav ul element:
+29. We want the navigation menu to be centered in the width of the nav section for that add the following declaration for the nav ul element:
 
 ```css
 nav ul {
-    …
-    justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 ```
-
-19. Add the following rules to change the body of the page
-
-```css
-body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 100%;
-  background-color: lightgray;
-  margin: 0;
-}```

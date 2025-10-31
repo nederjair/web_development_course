@@ -47,7 +47,7 @@ nav ul li {
 /* header styles */
 header {
   color: white;
-  background: url(images/croissants_banner.jpg) no-repeat center center;
+  background: url(../imgs/croissants_banner.jpg) no-repeat center center;
   background-size: cover;
   text-align: center;
   height: 15em;
@@ -62,7 +62,7 @@ header h1 {
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 100%;
   background-color: lightgray;
   margin: 0;
@@ -160,4 +160,20 @@ h2 {
   font-family: verdana, sans-serif;
   font-size: 0.8em;
   text-transform: uppercase;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li a {
+  display: block;
+  border: 1px solid;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin: 0.5em;
 }
