@@ -113,87 +113,313 @@ margin: 0 12px;
 }
 ```
 
-12. add the current page to the navigation menu (`nav`)
+13. add the current page to the navigation menu (`nav`)
 
 ## Advanced adjustments using CSS
 
-13. create a new `html` file called `bakery.html`. Add the following markup, then check the just created page in the browser
+### Create a beautiful layout
+
+![[fig1.png]]
+
+14. create a new `html` file called `bakery.html`. Add the following markup, then check the just created page in the browser
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Black Goose Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bakery.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Black Goose Bakery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bakery.css">
-  <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
-</head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="">Menu</a></li>
+          <li><a href="">News</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+      <h1><img src="imgs/bgb_logo.png" alt="Black Goose Bakery" /></h1>
+      <p>
+        The delicious baked goods you love at Black Goose Bistro...now available
+        to go!
+      </p>
+    </header>
 
-<body>
+    <main>
+      <h2>Fresh from the Oven</h2>
+      <h3>Breads</h3>
+      <p>
+        <img
+          src="imgs/bread.png"
+          alt="round loaf of bread on cutting board"
+        />
+        Our breads are made daily from highest-quality whole grain flour, water,
+        salt, and yeast or sourdough starter. Simply and naturally, and never
+        any preservatives. Patience is key to achieving the proper level of
+        fermentation and baking each loaf to perfection. Available in whole
+        grain, sourdough, olive loaf, classic rye, and potato-onion.
+      </p>
+      <p class="more"><a href="">Learn more about our baking process...</a></p>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="">Menu</a></li>
-        <li><a href="">News</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-    </nav>
-    <h1><img src="images/bgb_logo.png" alt="Black Goose Bakery"></h1>
-    <p>The delicious baked goods you love at Black Goose Bistro...now available to go!</p>
-  </header>
+      <h3>Muffins</h3>
+      <p>
+        <img src="imgs/muffin.png" alt="one chocolate chip muffin" /> Every
+        day, we offer a large selection of muffins, including blueberry,
+        multi-berry, bran, corn, lemon-poppyseed, and chocolate. Our muffins are
+        made from scratch each day. Stop by to see our seasonal muffin flavors!
+      </p>
+      <p class="more">
+        <a href="">Learn more about how we make our muffins...</a>
+      </p>
+    </main>
 
-  <main>
-    <h2>Fresh from the Oven</h2>
-    <h3>Breads</h3>
-    <p><img src="images/bread.png" alt="round loaf of bread on cutting board"> Our breads are made daily from
-      highest-quality whole grain flour, water, salt, and yeast or sourdough starter. Simply and naturally, and never
-      any preservatives. Patience is key to achieving the proper level of fermentation and baking each loaf to
-      perfection. Available in whole grain, sourdough, olive loaf, classic rye, and potato-onion.</p>
-    <p class="more"><a href="">Learn more about our baking process...</a></p>
+    <aside>
+      <h2>Hours</h2>
+      <p><span class="day">Monday:</span> 5am to 3pm</p>
+      <p><span class="day">Tuesday:</span> 5am to 3pm</p>
+      <p><span class="day">Wednesday:</span> 5am to 3pm</p>
+      <p><span class="day">Thursday:</span> 5am to 3pm</p>
+      <p><span class="day">Friday:</span> 5am to 3pm</p>
+      <p><span class="day">Saturday:</span> 6am to 4pm</p>
+      <p><span class="day">Sunday:</span> 6am to 4pm</p>
+    </aside>
 
-    <h3>Muffins</h3>
-    <p><img src="images/muffin.png" alt="one chocolate chip muffin"> Every day, we offer a large selection of muffins,
-      including blueberry, multi-berry, bran, corn, lemon-poppyseed, and chocolate. Our muffins are made from scratch
-      each day. Stop by to see our seasonal muffin flavors!</p>
-    <p class="more"><a href="">Learn more about how we make our muffins...</a></p>
-  </main>
-
-  <aside>
-    <h2>Hours</h2>
-    <p><span class="day">Monday:</span> 5am to 3pm</p>
-    <p><span class="day">Tuesday:</span> 5am to 3pm</p>
-    <p><span class="day">Wednesday:</span> 5am to 3pm</p>
-    <p><span class="day">Thursday:</span> 5am to 3pm</p>
-    <p><span class="day">Friday:</span> 5am to 3pm</p>
-    <p><span class="day">Saturday:</span> 6am to 4pm</p>
-    <p><span class="day">Sunday:</span> 6am to 4pm</p>
-  </aside>
-
-  <footer>
-    <p>All content copyright &copy; 2017, Black Goose Bistro.</p>
-  </footer>
-
-</body>
-
+    <footer>
+      <p>All content copyright &copy; 2017, Black Goose Bistro.</p>
+    </footer>
+  </body>
 </html>
+
 ```
 
-15. Inside the `css` folder  create a new `CSS` document called `bakery.css`. Add the following styling rules so your navigation menu gets centered and a bakground picture gets added (and other notizable changes)
+15. add a div around all of the content elements (from header to footer), and give it the id “container”. Save the HTML file.
+```html
+<body>
+<div id="container">
+<header>…</header>
+<main>…</main>
+<aside>…</aside>
+<footer>…</footer>
+</div>
+</body>
+```
+
+
+16. Inside the `css` folder  create a new `CSS` document called `bakery.css`. In the style sheet (`bakery.css`), add a new style to make the new div display as a grid:
+
+```css
+#container {
+  display: grid;
+}
+```
+
+17.  First we’ll work on the rows. FIGURE 1 shows that we need three rows to create the layout. Set the height of the first row track to auto so it will observe the height settings on the elements within it and automatically accommodate the content. The second row has a lot of text, so use the auto track value again to guarantee the track will expand at least as much as necessary to fit the text. For the third row, a height of 5em should be sufficient to fit the few lines of text with a comfortable amount of space:
+
+```css
+#container {
+  display: grid;
+  grid-template-rows: auto auto 5em;
+}
+```
+
+18. Now we can set up the column tracks. It looks like we’ll need only two: one for the main content and one for the Hours sidebar. I’ve used the minmax() value so I can ensure the text column never gets narrower than 25em, but it can expand to fill the available space in the browser (1fr). The Hours column feels right to me at 16em. Feel free to try other values.
+
+```css
+#container {
+display: grid;
+grid-template-rows: auto auto 5em;
+grid-template-columns: minmax(25em, 1fr) 16em;
+}
+```
+
+19. Next, name the areas in the grid so we can place the items in it easily and efficiently. Use the grid-template-areas property to name the cells in the grid:
+
+```css
+#container {
+  display: grid;
+  grid-template-rows: auto auto 5em;
+  grid-template-columns: minmax(25em, 1fr) 16em;
+  grid-template-areas:
+    "banner banner"
+    "main hours"
+    "footer footer";
+}
+```
+
+20. Put the content items into their proper places. Create a style rule for each grid item and tell it where to go with grid-area: 
+
+```css
+header {
+  grid-area: banner;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: hours;
+}
+footer {
+  grid-area: footer;
+}
+```
+
+save the file and take a look at the page in the browser.
+
+### Improve the page looking
+
+22. Set the background color of the navigation menu and the font among other changes with the following navigation style rules
+
+```css
+/* nav styles */
+nav, footer {
+  font-family: verdana, sans-serif;
+  background-color: #783F27;
+}
+nav ul li a:link, nav ul li a:visited {
+  color: #F9AB33;
+}
+nav ul li a:focus, nav ul li a:hover, nav ul li a:active {
+  color: #fff;
+}
+nav ul {
+  margin: 0;
+}
+nav ul li {
+   font-size: .8em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}```
+
+23. Improve the links appearence
+
+```css
+/* link styles */
+a:link, a:visited { color: #DC6903; }
+a:focus, a:hover, a:active { color: #F9AB33; }
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  padding-bottom: .2em;
+}
+```
+
+24. Aplly the header styles, check the changes in the browser. The navigation menu gets centered and a bakground picture gets added (and other notizable changes) 
 
 ```css
 /* header styles */
 header {
   color: white;
-  background: url(../imgs/croissants_banner.jpg) no-repeat center center;
-  background-size: cover;
+  background:  url(../imgs/croissants_banner.jpg) no-repeat center center;
+  background-size: cover; 
   text-align: center;
+  height: 15em;
+}
+header p {
+  font-style: italic;
+  font-size: 1.2em;
+  margin-top: -12px;
+}
+header h1 {
+  margin-top: 1.5em;
 }
 ```
-16. Add the following styling rules to the `cooking.css` file to eliminate the circles in the unordered list.
+25. Add the following general improving rules
+
+```css
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
+  background-color: lightgray;
+  margin: 0;
+}
+/* main "products" styles */
+main {
+  font-family: 'Stint Ultra Expanded', Georgia, serif;
+  background-color: white;
+  line-height: 1.8em;
+  color: #555;
+  padding: 1em;
+  border: double 4px #EADDC4;
+  border-radius: 25px;
+  margin: 2.5%;
+}
+h3 {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: #7A0002;
+  border-top: 1px solid;
+  border-left: 3px solid;
+  padding-left: 1em;
+  margin-top: 2.5em;
+}
+p.more {
+  font-family: verdana, sans-serif;
+  text-transform: uppercase; 
+  font-size: .8em;
+  clear: left;
+}
+main img {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+img[src*="bread"] {
+  -webkit-shape-outside: ellipse(130px 95px at 50% 50%);
+  shape-outside: ellipse(130px 95px at 50% 50%);
+}
+
+img[src*="muffin"] {
+  margin-left: 50px;
+  -webkit-shape-outside: circle(125px);  
+  shape-outside: circle(125px);
+  -webkit-shape-outside: polygon(0px 0px, 197px 0px, 241px 31px, 241px 68px, 226px 82px, 219px 131px, 250px 142px, 250px 158px, 0px 158px);
+  shape-outside: polygon(0px 0px, 197px 0px, 241px 31px, 241px 68px, 226px 82px, 219px 131px, 250px 142px, 250px 158px, 0px 158px);  
+}
+
+/* aside "hours" styles */
+aside {
+  background: url(images/scallop.png) repeat-y left top;
+  background-color: #F6F3ED;
+  padding: 1em;
+  padding-left: 45px;
+  border-top-right-radius: 25px;
+  margin: 1em 2.5% 0 10%;
+}
+/* misc styles */
+footer {
+  color: #EADDC4;
+  text-align: center;
+  font-size: .8em;
+  padding: 1em;
+}
+#award { 	
+  position: fixed; 	
+  top: 30px; 	
+  left: 50px;
+}
+h2 {
+  font-family: 'Stint Ultra Expanded', Georgia, serif;
+}
+.day {
+  color: #783F27;
+  font-family: verdana, sans-serif;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+```
+
+### Improve the navigation menu
+
+16. Add the following styling rules to the `bakery.css` file to eliminate the circles in the unordered list.
 
 ```css
 nav ul {
