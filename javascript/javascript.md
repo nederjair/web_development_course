@@ -161,3 +161,222 @@ var foo = 5;
 ```
 
 We start by declaring the variable by using the var keyword. The single equals sign (=) indicates that we are assigning it a value. Because that’s the end of our statement, we end the line with a semicolon. Variables can also be declared without the var keyword, which impacts what part of your script will have access to the information they contain. We’ll discuss that further in the section “Variable Scope and the var Keyword” later in this lecture.
+
+You can use anything you like as a variable name, but make sure it’s a name that will make sense to you later. You wouldn’t want to name a variable some- thing like data; it should describe the information it contains. In our earlier very specific example, productName might be a more useful name than foo. There are a few rules for naming a variable:
+
+- It must start with a letter or an underscore.
+
+- It may contain letters, digits, and underscores in any combination.
+
+- It may not contain character spaces. As an alternative, use underscores in place of spaces, or close up the space and use camel case instead (for example, my_variable or myVariable).
+
+- It may not contain special characters (e.g., ! . , / \ + * =).
+
+You can change the value of a variable at any time by redeclaring it anywhere in your script. Remember: JavaScript is case-sensitive, and so are those vari- able names.
+
+### Data types
+
+The values we assign to variables fall under a few distinct data types:
+
+#### Undefined
+The simplest of these data types is likely undefined. If we declare a vari- able by giving it a name but no value, that variable contains a value of undefined.
+
+```javascript
+var foo;
+alert(foo); // This will open a dialog containing "undefined".
+```
+Odds are you won’t find a lot of use for this right away, but it’s worth knowing for the sake of troubleshooting some of the errors you’re likely to encounter early on in your JavaScript career. If a variable has a value of undefined when it shouldn’t, you may want to double-check that it has been declared correctly or that there isn’t a typo in the variable name. 
+
+#### Null
+
+Similar to undefined, assigning a variable of null (again, case-sensitive) simply says, “Define this variable, but give it no inherent value.”
+
+```javascript
+var foo = null;
+alert(foo); // This will open a dialog containing "null".
+```
+
+#### Numbers
+
+You can assign variables numeric values.
+
+```javascript
+var foo = 5;
+alert(foo); // This will open a dialog containing "5".
+```
+
+The word foo now means the exact same thing as the number 5 as far as JavaScript is concerned. Because JavaScript is loosely typed, we don’t have to tell our script to treat the variable foo as the number 5. The variable behaves the same as the number itself, so you can do things to it that you would do to any other number by using classic mathematical notation: +, -, *, and / for plus, minus, multiply, and divide, respectively. In this example, we use the plus sign (+) to add foo to itself (foo + foo).
+
+
+```javascript
+var foo = 5;
+alert(foo + foo); // This will alert "10".
+```
+
+#### Strings
+
+Another type of data that can be saved to a variable is a string, which is basically a line of text. Enclosing characters in a set of single or double quotes indicates that it’s a string, as shown here:
+
+```javascript
+var foo = "five";
+alert( foo ); // This will alert "five"
+```
+
+The variable foo is now treated exactly the same as the word five. This applies to any combination of characters: letters, numbers, spaces, and so on. If the value is wrapped in quotation marks, it will be treated as a string of text. If we were to wrap the number 5 in quotes and assign it to a variable, that variable wouldn’t behave as a number; instead, it would behave as a string of text containing the character “5.”Strings
+
+Earlier we saw the plus sign (+) used to add numbers. When the plus sign is used with strings, it sticks the strings together (called concatenation) into one long string, as shown in this example.
+
+```javascript
+var foo = "bye"
+alert(foo + foo); // This will alert "byebye"
+```
+
+Notice what the alert returns in the following example when we define the value 5 in quotation marks, treating it as a string instead of a number:
+
+```javascript
+var foo = "5";
+alert( foo + foo ); // This will alert "55"
+```
+
+If we concatenate a string and a number, JavaScript will assume that the number should be treated as a string as well, since the math would be impossible.
+
+```javascript
+var foo = "five";
+var bar = 5;
+alert( foo + bar ); // This will alert "five5"
+```
+
+#### Booleans
+
+We can also assign a variable a true or false value. This is called a Boolean value, and it is the lynchpin for all manner of advanced logic. Boolean val- ues use the true and false keywords built into JavaScript, so quotation marks are not necessary.
+
+```javascript
+var foo = true; // The variable "foo" is now true
+```
+
+Just as with numbers, if we were to wrap the preceding value in quotation marks, we’d be saving the word true to our variable instead of the inherent value of true (i.e., “not false”).
+
+In a sense, everything in JavaScript has either an inherently true or false value. For example, null, undefined, 0, and empty strings (" ") are all inherently false, while every other value is inherently true. These values, although not identical to the Booleans true and false, are commonly referred to as being “truthy” and “falsy.”
+
+#### Arrays
+
+An array is a group of multiple values (called members) that can be assigned to a single variable. The values in an array are said to be indexed, meaning you can refer to them by number according to the order in which they appear in the list. The first member is given the index number 0, the second is 1, and so on, which is why one almost invariably hears us nerds start counting things at zero—because that’s how JavaScript counts things, and many other programming languages do the same. We can avoid a lot of future coding headaches by keeping this in mind.
+
+So, let’s say our script needs all of the variables we defined earlier. We could define them three times and name them something like foo1, foo2, and so on, or we can store them in an array, indicated by square brackets ([ ]).
+
+```javascript
+var foo = [5, "five", "5"];
+```
+
+Now anytime you need to access any of those values, you can grab them from the single foo array by referencing their index number:
+
+```javascript
+alert( foo[0] ); // Alerts "5"
+alert( foo[1] ); // Alerts "five"
+alert( foo[2] ); // Also alerts "5"
+alert( foo[0] ); // Alerts "5"
+alert( foo[1] ); // Alerts "five"
+alert( foo[2] ); // Also alerts "5"
+```
+
+#### Comparison Operators
+
+Now that we know how to save values to variables and arrays, the next logi- cal step is knowing how to compare those values. There is a set of special characters called comparison operators that evaluate and compare values in different ways:
+
+`==` Is equal to
+`!=` Is not equal to
+`===` Is identical to (equal to and of the same data type)
+`!==` Is not identical to
+`>` Is greater than
+`>=` Is greater than or equal to
+`<` Is less than
+`<=` Is less than or equal to
+
+There’s a reason all of these definitions read as parts of a statement. In com- paring values, we’re making an assertion, and the goal is to obtain a result that is either inherently true or inherently false. When we compare two values, JavaScript evaluates the statement and gives us back a Boolean value depend- ing on whether the statement is true or false.
+
+
+```javascript
+alert( 5 == 5 ); // This will alert "true"
+alert( 5 != 6 ); // This will alert "true"
+alert( 5 < 1 ); // This will alert "false"
+```
+
+#### Equal versus identical
+
+The tricky part is understanding the difference between “equal to” (==) and “identical to” (===). We already learned that all of these values fall under a certain data type. For example, a string of “5” and a number 5 are similar, but they’re not quite the same thing.
+
+Well, that’s exactly what === is meant to check.
+
+```javascript
+alert( "5" == 5 ); // This will alert "true". They're both "5".
+alert( "5" === 5 ); /* This will alert "false". They're both "5", but they're not the same data type. */
+alert( "5" !== 5 ); /* This will alert "true", since they're not the same data type. */
+```
+
+#### Mathematical operators
+
+The other type of operator is a mathematical operator, which performs math- ematical functions on numeric values (and, of course, variables that contain numeric values). We touched briefly on the straightforward mathematical operators for add (+), subtract (-), multiply (*), and divide (/). There are also some useful shortcuts you should be aware of:
+
+`+=` Adds the value to itself
+`++` Increases the value of a number (or a variable containing a number value) by 1
+`--` Decreases the value of a number (or a variable containing a number value) by 1
+
+#### if/else statements
+
+if/else statements are how we get JavaScript to ask itself a true/false ques- tion. They are more or less the foundation for all the advanced logic that can be written in JavaScript, and they’re about as simple as programming gets. In fact, they’re almost written in plain English. The structure of a conditional statement is as follows:
+
+```javascript
+if( true ) {
+// Do something.
+}
+```
+
+It tells the browser “if this condition is met, then execute the commands listed between the curly brackets ({ }).” JavaScript doesn’t care about whitespace in our code, remember, so the spaces on either side of the ( true ) are purely for the sake of more readable code.
+
+Here is a simple example using the array we declared earlier:
+
+```javascript
+var foo = [5, "five", "5"];
+if( foo[1] === "five" ) {
+alert("This is the word five, written in plain English.");
+}
+```
+
+Since we’re making a comparison, JavaScript is going to give us a value of either true or false. The highlighted line of code says “true or false: the value of the foo variable with an index of 1 is identical to the word ‘five’?”
+
+In this case, the alert would fire because the foo variable with an index of 1 (the second in the list, if you’ll remember) is identical to “five”. It is indeed true, and the alert fires.
+
+We can also explicitly check if something is false by using the != comparison operator, which reads as “not equal to.”
+
+```javascript
+if( 1 != 2 ) {
+    alert("If you're not seeing this alert, we have bigger problems than JavaScript."); // 1 is never equal to 2, so we should always see this alert.
+}
+```
+
+JavaScript says, “That ‘1 is not equal to 2’ line is a true statement, so I’ll run this code.”
+
+If the statement doesn’t evaluate to true, the code inside the curly brackets will be skipped over completely:
+
+```javascript
+if( 1 == 2 ) {
+    alert("If you're seeing this alert, we have bigger problems than JavaScript."); // 1 is not equal to 2, so this code will never run.
+}
+```
+
+#### That covers “if,” but what about “else”?
+
+what if we want to do one thing if something is true and something else if that thing is false? We could write two if statements, but that’s a little clunky. Instead, we can just say, “else, do something…else.”
+
+```javascript
+var test = "testing";
+if( test == "testing" ) {
+    alert( "You haven't changed anything." );
+} else {
+    alert( "You've changed something!" );
+}
+```
+
+Changing the value of the test variable to something else—anything other than the word testing—will trigger the alert “You’ve changed something!”
+
+### Loops
