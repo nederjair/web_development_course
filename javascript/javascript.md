@@ -380,3 +380,317 @@ if( test == "testing" ) {
 Changing the value of the test variable to something else—anything other than the word testing—will trigger the alert “You’ve changed something!”
 
 ### Loops
+
+There are cases in which we’ll want to go through every item in an array and do something with it, but we won’t want to write out the entire list of items and repeat ourselves a dozen or more times. Loops are incredibly useful.
+
+With what we’ve covered already, we’re getting good at dealing with single variables, but that can get us only so far. Loops allow us to easily deal with huge sets of data.
+
+Say we have a form that requires none of the fields to be left blank. The form is presented as an array, so we could check every value stored in that array one item at a time, sure, but that’s a lot of code and a maintenance nightmare. If we use a loop to check each value, we won’t have to modify our script, regardless of how many fields are added to or removed from the page. Loops allow us to act on every item in an array, regardless of that array’s size.
+
+There are several ways to write a loop, but the for method is one of the most popular. The basic structure of a for loop is as follows:
+
+```javascript
+for( initialize the variable; test the condition; alter the value; ) {
+// do something
+}
+```
+
+Here’s an example of a for loop in action:
+
+```javascript
+for( var i = 0; i < 2; i++ ) {
+alert( i ); // This loop will trigger three alerts, reading "0", "1", and "2" respectively.
+}
+```
+
+That’s a little dense, so let’s break it down:
+
+**for()**
+First, we’re calling the for() statement, which is built into JavaScript. It says, “For every time this is true, do this.” Next we need to supply that statement with some information.
+
+**var i = 0;**
+This creates a new variable, i, with its value set to zero. You can tell it’s a variable by the single equals sign. More often than not, you’ll see coders using the letter “i” (short for “index”) as the variable name, but keep in mind that you could use any variable name in its place. It’s a common convention, not a rule.
+
+We set that initial value to 0 because we want to stay in the habit of count- ing from zero up. That’s where JavaScript starts counting, after all.
+
+**i <= 2;**
+With i <= 2;, we’re saying, “for as long as i is less than or equal to 2, keep on looping.” Since we’re counting from zero, that means the loop will run three times.
+
+**i++**
+Finally, i++ is shorthand for “every time this loop runs, add one to the value of i” (++ is one of the mathematical shortcut operators we saw earlier). Without this step, i would always equal zero, and the loop would run forever! Fortunately, modern browsers are smart enough not to let this happen. If one of these three pieces is missing, the loop simply won’t run at all.
+
+**{ script }**
+Anything inside those curly brackets is executed once for each time the loop runs, which is three times in this case. That i variable is available for use in the code the loop executes as well, as we’ll see next.
+
+Let’s go back to the “check each item in an array” example. How would we write a loop to do that for us?
+
+```javascript
+var items = ["foo", "bar", "baz"]; // First we create an array.
+for( var i = 0; i < items.length; i++ ) {
+    alert( items[i] ); // This will alert each item in the array.
+}
+```
+
+This example differs from our first loop in two key ways:
+
+**items.length**
+Instead of using a number to limit the number of times the loop runs, we’re using a property built right into JavaScript to determine the “length” of our array, which is the number of items it contains. .length is just one of the standard properties and methods of the Array object in JavaScript. In our example, there are three items in the array, so it will loop three times.
+
+**items[i]**
+Remember how I mentioned that we can use that i variable inside the loop? Well, we can use it to reference each index of the array. Good thing we started counting from zero; if we had set the initial value of i to 1, the first item in the array would have been skipped. The result of our for loop example is that each item in the array (the text strings foo, bar, and baz) gets returned after each loop and fed to an alert.
+
+Now no matter how large or small that array should become, the loop will execute only as many times as there are items in the array, and will always hold a convenient reference to each item in the array.
+
+There are literally dozens of ways to write a loop in JavaScript, but this is one of the more common patterns you’re going to encounter out there in the wild. Developers use loops to perform a number of tasks, such as the following: 
+
+- Looping through a list of elements on the page and checking the value of each, applying a style to each, or adding/removing/changing an attribute on each. For example, we could loop through each element in a form and ensure that users have entered a valid value for each before they proceed.
+
+
+- Creating a new array of items in an original array that have a certain value. We check the value of each item in the original array within the loop, and if the value matches the one we’re looking for, we populate a new array with only those items. This turns the loop into a filter of sorts.
+
+## Functions
+
+I’ve introduced you to a few functions already . Here’s an example of a function that you might recognize:
+
+```javascript
+alert("I've been a function all along!");
+```
+
+A function is a bit of code for performing a task that doesn’t run until it is referenced or called. alert() is a function built into our browser. It’s a block of code that runs only when we explicitly tell it to. In a way, we can think of a function as a variable that contains logic, in that referencing that variable will run all the code stored inside it. Functions allow code to be reused any time it is referenced so you don’t need to write it over and over.
+
+
+All functions share a common pattern (FIGURE 21-6). The function name is always immediately followed by a set of parentheses (no space), then a pair of curly brackets that contains their associated code. The parentheses sometimes contain additional information used by the function called argu- ments. Arguments are data that can influence how the function behaves. For example, the alert() function we know so well accepts a string of text as an argument, and uses that information to populate the resulting dialog.
+
+![[fig6.png]]
+*Figure 6*
+
+There are two types of functions: those that come “out of the box” (native JavaScript functions) and those that you make up yourself (custom func- tions). Let’s look at each.
+
+### Native functions
+
+Hundreds of predefined functions are built into JavaScript, including these:
+
+```
+alert(), confirm(), and prompt()
+```
+*These functions trigger browser-level dialog boxes.*
+
+```
+Date()
+```
+*Returns the current date and time.*
+
+```
+parseInt("123")
+```
+*This function will, among other things, take a string data type containing numbers and turn it into a number data type. The string is passed to the function as an argument.*
+
+```
+setTimeout(functionName, 5000)
+```
+*Executes a function after a delay. The function is specified in the first argument, and the delay is specified in milliseconds in the second argu- ment (in the example, 5,000 milliseconds, which equals 5 seconds). There are scores more beyond this as well. Note that names of functions are case-sensitive, so be sure to write setTimeout instead of SetTimeout.*
+
+### Custom functions
+
+To create a custom function, we type the function keyword followed by a name for the function, followed by opening and closing parentheses, followed by opening and closing curly brackets:
+
+```javascript
+function name() {
+// Our function code goes here.
+}
+```
+
+Just as with variables and arrays, the function’s name can be anything you want, but all the same naming syntax rules apply. If we were to create a function that just alerts some text, it would look like this:
+
+```javascript
+function foo() {
+    alert("Our function just ran!"); // This code won't run until we call the function 'foo()'
+}
+```
+
+We can then call that function and execute the code inside it anywhere in our script by writing the following:
+
+```javascript
+foo(); // Alerts "Our function just ran!"
+```
+
+We can call this function any number of times throughout our code. It saves a lot of time and redundant coding.
+
+### Arguments
+Having a function that executes the exact same code throughout your script isn’t likely to be all that useful. We can “pass arguments” (provide data) to native and custom functions in order to apply a function’s logic to different sets of data at different times. To hold a place for the arguments, create a vari- able name (or a series of comma-separated names) in the parentheses after the name of the function at the time the function is defined.
+
+
+For example, let’s say we wanted to create a very simple function that alerts the number of items contained in an array. We’ve already learned that we can use .length to get the number of items in an array, so we just need a way to pass the array to be measured into our function. We do that by supplying the array to be measured as an argument. In the code, I’ve defined a new func- tion named alertArraySize() and created the variable arr that holds a place for the argument. That variable will then be available inside the function and will contain whatever argument we pass when we call the function.
+
+```javascript
+function alertArraySize(arr) {
+    alert(arr.length);
+}
+```
+
+When we call that function, anything we include between the parentheses after the function name (in this case, test) will be passed to the argument with the arr placeholder as the function executes. Here we’ve defined the vari- able test as an array of five items. We’ve passed that variable to the function, and now that array gets plugged in and the length is returned. 
+
+```javascript
+var test = [1,2,3,4,5];
+alertArraySize(test); // Alerts "5"
+```
+
+### Returning a value
+
+It’s pretty common to use a function to calculate something and then give you back a value that you can use elsewhere in your script. We could accomplish this using what we know now, through clever application of variables, but there’s a much easier way.
+
+The return keyword inside a function effectively turns that function into a variable with a dynamic value! This one is a little easier to show than it is to tell, so bear with me while we consider this example:
+
+```javascript
+function addNumbers(a,b) {
+    return a + b;
+}
+```
+We now have a function that accepts two arguments and adds them together. That wouldn’t be much use if the result always lived inside that function, because we wouldn’t be able to use the result anywhere else in our script. Here we use the return keyword to pass the result out of the function. Now any reference you make to that function gives you the result of the function— just like a variable would:
+
+```javascript
+alert( addNumbers(2,5) ); // Alerts "7"
+```
+
+In a way, the addNumbers() function is now a variable that contains a dynamic value: the value of our calculation. If we didn’t return a value inside our func- tion, the preceding script would alert undefined, just like a variable that we haven’t given a value.
+
+The return keyword has one catch. As soon as JavaScript sees that it’s time to return a value, the function ends. Consider the following:
+
+```javascript
+function bar() {
+    return 3;
+    alert("We'll never see this alert.");
+}
+```
+
+When you call this function by using bar(), the alert on the second line never runs. The function ends as soon as it sees it’s time to return a value.
+
+### Variable Scope and the var Keyword
+
+There are times when you’ll want a variable that you’ve defined within a function to be available anywhere throughout your script. Other times, you may want to restrict it and make it available only to the function it lives in. This notion of the availability of the variable is known as its scope. A variable that can be used by any of the scripts on your page is globally scoped, and a variable that’s available only within its parent function is locally scoped.
+
+
+JavaScript variables use functions to manage their scope. If a variable is defined outside a function, it will be globally scoped and available to all scripts. When you define a variable within a function and you want it to be used only by that function, you can flag it as locally scoped by preceding the variable name with the var keyword:
+
+```javascript
+var foo = "value";
+```
+
+To expose a variable within a function to the global scope, we omit the var keyword and simply define the variable:
+
+```javascript
+foo = "value";
+```
+
+You need to be careful about how you define variables within functions, or you could end up with unexpected results. Take the following JavaScript snip- pet, for example:
+
+```javascript
+function double(num){
+    total = num + num;
+    return total;
+}
+var total = 10;
+var number = double(20);
+alert(total); // Alerts 40.
+```
+
+You may expect that because you specifically assigned a value of 10 to the variable total, the alert(total) function at the end of the script would return 10. But because we didn’t scope the total variable in the function with the var keyword, it bleeds into the global scope. Therefore, although the vari- able total is set to 10, the following statement runs the function and grabs the value for total defined there. Without the var, the variable “leaked out.”
+
+
+As you can see, the trouble with global variables is that they’ll be shared throughout all the scripting on a page. The more variables that bleed into the global scope, the better the chances you’ll run into a “collision” in which a variable named elsewhere (in another script altogether, even) matches one of yours. This can lead to variables being inadvertently redefined with unex- pected values, which can lead to errors in your script.
+
+![[fig7.png]]
+
+Remember that we can’t always control all the code in play on our page. It’s very common for pages to include code written by third parties, for example:
+
+- Scripts to render advertisements
+
+- User-tracking and analytics scripts
+
+- Social media “share” buttons
+
+It’s best not to take any chances on variable collisions, so when you start writ- ing scripts on your own, locally scope your variables whenever you can.
+
+
+This concludes our little introductory tour of JavaScript syntax. There’s a lot more to it, but this should give you a decent foundation for learning more on your own and being able to interpret scripts when you see them. We have just a few more JavaScript-related features to tackle before we look at a few examples.
+
+# THE BROWSER OBJECT
+
+In addition to being able to control elements on a web page, JavaScript also gives you access to and the ability to manipulate the parts of the browser window itself. For example, you might want to get or replace the URL that is in the browser’s address bar, or open or close a browser window.
+
+
+In JavaScript, the browser is known as the window object. The window object has a number of properties and methods that we can use to interact with it. In fact, our old friend alert() is actually one of the standard browser object methods. TABLE 1 lists just a few of the properties and methods that can be used with window to give you an idea of what’s possible. For a complete list, see the Window API reference at MDN Web Docs (developer.mozilla.org/ en-US/docs/Web/API/Window).
+
+
+![[fig8.png]]
+*Table 1*
+
+# EVENTS
+
+JavaScript can access objects in the page and the browser window, but did you know it’s also “listening” for certain events to happen? An event is an action that can be detected with JavaScript, such as when the document loads or when the user clicks an element or just moves her mouse over it. HTML 4.0 made it possible for a script to be tied to events on the page, whether initi- ated by the user, the browser itself, or other scripts. This is known as event binding.
+
+
+In scripts, an event is identified by an event handler. For example, the onload event handler triggers a script when the document loads, and the onclick and onmouseover handlers trigger a script when the user clicks or mouses over an element, respectively. TABLE 21-2 lists some of the most common event han- dlers. Keep in mind that these are also case-sensitive.
+
+![[fig9.png]]
+*Table 2*
+
+There are three common methods for applying event handlers to items within our pages:
+
+- As an HTML attribute
+- As a method attached to the element
+- Using addEventListener()
+
+In the upcoming examples of the latter two approaches, we’ll use the window object. Any events we attach to window apply to the entire document. We’ll be using the onclick event in all of these as well.
+
+## As an HTML Attribute
+
+You can specify the function to be run in an attribute in the markup, as shown in the following example:
+```javascript
+<body onclick="myFunction();"> /* myFunction will now run when the user clicks anything within 'body' */
+```
+
+Although still functional, this is an antiquated way of attaching events to elements within the page. It should be avoided for the same reason we avoid using style attributes in our markup to apply styles to individual elements. In this case, it blurs the line between the semantic layer and behavioral layers of our pages, and can quickly lead to a maintenance nightmare.
+
+## As a Method
+
+This is another somewhat dated approach to attaching events, though it does keep things strictly within our scripts. We can attach functions by using help- ers already built into JavaScript:
+
+```javascript
+window.onclick = myFunction; /* myFunction will run when the user clicks anything within the browser window */
+```
+
+We can also use an anonymous function rather than a predefined one:
+
+```javascript
+window.onclick = function() { 
+/* Any code placed here will run when the user clicks anything within the browser window */
+};
+```
+
+This approach has the benefit of both simplicity and ease of maintenance, but does have a fairly major drawback: we can bind only one event at a time with this method.
+
+```javascript
+window.onclick = myFunction;
+window.onclick = myOtherFunction;
+```
+
+**In the example just shown, the second binding overwrites the first, so when the user clicks inside the browser window, only myOtherFunction will run. The reference to myFunction is thrown away.**
+
+## addEventListener
+
+Although a little more complex at first glance, this approach allows us to keep our logic within our scripts and allows us to perform multiple bindings on a single object. The syntax is a bit more verbose. We start by calling the addEventListener() method of the target object, and then specify the event in question and the function to be executed as two arguments:
+
+```javascript
+window.addEventListener("click", myFunction);
+```
+
+Notice that we omit the preceding “on” from the event handler with this syntax.
+
+Like the previous method, addEventListener() can be used with an anony- mous function as well:
+
+```javascript
+window.addEventListener("click", function(e) { });
+```
+
+This was just a brief introduction, so I recommend getting more information on addEventListener() at the “eventTarget.addEventListener” page on the MDN Web Docs (developer.mozilla.org/en/DOM/element.addEventListener).
