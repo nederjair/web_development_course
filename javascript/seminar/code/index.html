@@ -4,24 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My page</title>
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <h1>Welcome to the hangman game</h1>
+    <h1>Welcome to the guess the Goose bistro dish game</h1>
     <div id="letters"></div>
     <hr />
     <div>
-      <form action="">
-        <input
-          type="text"
-          maxlength="1"
-          placeholder="enter a letter"
-          size="2"
-          id="userLetter"
-        />
-        <input type="submit" value="guess" id="guess" />
-      </form>
+      <input
+        type="text"
+        maxlength="1"
+        placeholder="enter a letter"
+        size="2"
+        id="userInput"
+      />
+      <button id="guess">Click Me!</button>
     </div>
-
     <script src="index.js"></script>
   </body>
 </html>
