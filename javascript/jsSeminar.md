@@ -140,3 +140,39 @@ function fillUserWord(userArray, userInput, word) {
 ```
 
 This function compares the letter that the user inputs with the letters in the guessing word and put the guessed letter where it should be.
+
+12. Create the next function (`mirrorUserWord`) and place it after the `{javascript} fillUserWord` function.
+
+```javascript
+function mirrorUserWord(userArray) {
+  for (i = 0; i < word.length; i++) {
+    spanArray[i].innerHTML = userArray[i];
+  }
+}
+```
+
+This function writes the content in userArray to the `span` elements mirroring or updating the content of the letters in the page.
+
+13. get the button element so we can scan or listen or poll the click event and update the game, write the next line of code at the end of the current document.
+
+```javascript
+var guessButton = document.getElementById("guess");
+```
+
+14. after the previous line of code add an event listener for the click event and perform the needed actions, an anonimus function is used.
+
+
+```javascript
+guessButton.addEventListener("click", function () {
+  var userLetter = userInput.value;
+  fillUserWord(userArray, userLetter, word);
+  mirrorUserWord(userArray);
+  userInput.value = "";
+  userInput.focus();
+});
+```
+
+
+
+
+

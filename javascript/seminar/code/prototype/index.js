@@ -19,6 +19,7 @@ function mirrorUserWord(userArray) {
     spanArray[i].innerHTML = userArray[i];
   }
 }
+
 const words = ["pizza", "tapenade", "pasta", "borsh"];
 randInt = getRandomIntInclusive(0, words.length - 1);
 var word = words[randInt];
