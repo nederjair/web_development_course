@@ -172,7 +172,45 @@ guessButton.addEventListener("click", function () {
 });
 ```
 
+The code inside the anonimous function in the event listener do the following (after clicking the button):
 
+- get the letter written by the user in the input box
 
+- update the userArray array comparing it to the input letter and the word to guess
 
+- update the `span` elements that are showed in the page 
+
+- clear the input box 
+
+- focus the mouse cursor into the input box so the user does not have do doit every time manually.
+
+15. Add more dishes (words) to the game and try it out.
+
+16. add the game to the navigation menu (`nav`)
+
+# IMPROVEMENTS
+
+The game implemented to this point is a very simple yet important base for understanding and practicing how JavaScript works. On the other hand improvements can be made among I recommend:
+
+1. A better layout with `css`
+
+2. A better overall color scheme with `css`
+
+3. A better bigger font with `css`
+
+4. A reset button
+
+5. A function that checks if the user won
+
+6. A counter of trys with limited try outs
+
+7. An initial hint, adding some percent of the letters
+
+8. A hint, adding a image
+
+9. when the user win show a message and an image
+
+10. when the user looses show a message and an image
+
+11. Change the game to an organize the words, where all the words are shown but in disorder, the user have to order them so it makes the word
 
