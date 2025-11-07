@@ -72,3 +72,71 @@ const words = ["pizza", "tapenade", "pasta", "borsh"];
 randInt = getRandomIntInclusive(0, words.length - 1);
 var word = words[randInt];
 ```
+
+6. get the `div` element that contains the `span` elements where the letters of the word are contained. notice that its id is `"letters"`.
+
+```javascript
+var letters = document.getElementById("letters");
+```
+
+This element (`div`) will be useful to let us to generate the initial `span` elements and change the letter that the page display.
+
+7. Get the text `input` element where the user writes the letter that he thinks is part of the word.
+
+```javascript
+var userInput = document.getElementById("userInput");
+```
+
+This element will be useful to get the text (a letter) written by the user and check if it is part of the word.
+
+8. Declare an array that will serve us as a placeholder for the `span` elements so we can modify them.
+
+```javascript
+const spanArray = [];
+```
+
+9. Declare an array that will serve us as a placeholder for the currently user guessed letter so we can store them for future comparisons with the guessing word.
+
+```javascript
+const userArray = [];
+```
+
+10. use a cycle to generate the `span` elements where the letters of the word will be shown. 
+
+```javascript
+for (i = 0; i < word.length; i++) {
+  var initialText = document.createTextNode("  _____  ");
+  spanArray[i] = document.createElement("span");
+  spanArray[i].setAttribute("id", "letter" + i);
+  spanArray[i].appendChild(initialText);
+  letters.appendChild(spanArray[i]);
+  userArray[i] = "  _____  ";
+}
+```
+
+- the `{javascript} spanArray[i] = document.createElement("span");` create the `span` elements and save them in the `spanArray` array.
+
+- the `{javascript} var initialText = document.createTextNode("  _____  ");` create the initial texts to fill the `span` elements.
+
+- the `{javascript} spanArray[i].appendChild(initialText);` set the text of the `span` element.
+
+- the `{javascript} letters.appendChild(spanArray[i]);` append the `span` elements to the `div` element.
+
+
+- the `{javascript} spanArray[i].setAttribute("id", "letter" + i);` set the id of the current spam element.
+
+- the `{javascript} userArray[i] = "  _____  ";` set the userArray to an initial text.
+
+11. Create the next function (`fillUserWord`) and place it after the `{javascript} getRandomIntInclusive` function.
+
+```javascript
+function fillUserWord(userArray, userInput, word) {
+  for (i = 0; i < word.length; i++) {
+    if (word[i] === userInput) {
+        userArray[i] = userInput;
+    }
+  }
+}
+```
+
+This function compares the letter that the user inputs with the letters in the guessing word and put the guessed letter where it should be.
