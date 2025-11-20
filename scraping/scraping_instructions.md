@@ -56,18 +56,30 @@ After this a browser should open with the webpage where we are going to get the 
 
     - press the windows key then the `r` key (`win + r`)
     - open a terminal by typing `cmd` then press `enter`
+![[fig8.png]]
     - type in the terminal `python --version`
+![[fig9.png]]
 
 if the terminal gives you a version then you have python installed, if not then go to the step `7`
 
 7. Use the installer provided in TUIS, if it does not work download it from the site `https://www.python.org/downloads/`, selecting your operating system.
 
-![[fig8.png]]
-![[fig9.png]]
+![[fig10.png]]
 
-When installing check the box "add python to the PATH environment variable"
+![[fig11.png]]
 
+8. Double click on the python installer then check the box "add python to the PATH environment variable" and press "install now"
 
+![[fig12.png]]
 
+Python should start installing in your operative system
 
+![[fig13.png]]
 
+9. When the installer finnish press the "close" button and repeat the step numer `6` (Check that your system has python installed)
+
+![[fig14.png]]
+
+# CHECK THAT PYTHON WORKS IN VSCODE
+
+10. In vscode go to extensions
