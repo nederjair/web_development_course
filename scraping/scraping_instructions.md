@@ -82,4 +82,25 @@ Python should start installing in your operative system
 
 # CHECK THAT PYTHON WORKS IN VSCODE
 
-10. In vscode go to extensions
+10. In vscode go to extensions, then write in the search bar `python`, then choose the extension called "python" (shown in the figure) without anything aditional, then install it.
+
+![[fig15.png]]
+
+![[fig16.png]]
+
+11. Come back to the file explorer and create a new python file called `main.py` pressing the create file button then writting the name of the file with its extension (don't forget the "py" extension) then press enter.
+
+![[fig17.png]]
+
+![[fig18.png]]
+
+12. Select the `main.py` file pressing click on it, then write the next line of code on it:
+
+```python
+print("hello from python")
+```
+
+13. Save the file pressing `CTRL+s` then press the "run python file" button and check it prints the message "hello from python" in the console.
+
+![[fig19.png]]
+
