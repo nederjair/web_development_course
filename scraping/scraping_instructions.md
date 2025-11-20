@@ -103,4 +103,3 @@ print("hello from python")
 13. Save the file pressing `CTRL+s` then press the "run python file" button and check it prints the message "hello from python" in the console.
 
 ![[fig19.png]]
-
