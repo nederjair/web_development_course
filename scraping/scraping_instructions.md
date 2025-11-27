@@ -4,7 +4,7 @@
 
 # Main goal
 
-The game you designed (guess the word) has a very poor list of items (dishes), your goal is get the information from somewhere else and add it to your site. This time we are getting the information from a local recipes page with a lot of different dishes. Doing this manually can take you months, because of that we are going to use a technique called web scraping.
+The game you designed (guess the word) has a very poor list of items (dishes), your goal is get the information from somewhere else and add it to your site. This time we are getting the information from a local recipes page with a lot of different dishes. Doing this manually can take you months, because of that we are going to use a technique called web scraping. In this part we will prepare all the necessary elements before getting information from other sites (we will do that in the next laboratory work).
 
 # Important information before starting
 
