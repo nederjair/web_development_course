@@ -14,7 +14,7 @@ The game you designed (guess the word) has a very poor list of items (dishes), y
 
 - **Almost all sites have ddos protection, which means they have a limit of request you can make in an specific amount of time (before they block your IP), so using libraries like request should be thoughtful and limited to a few attemps (don't use them in cycles) also adding pause times between requests if possible is a good practice.**
 
-- **Use web scraping mostly to automatizate boring tasks or with limited amount of information, don't make exact copies of a site or use all its available information.**
+- **Use web scraping mostly to automatize boring tasks or with limited amount of information, don't make exact copies of a site or use all its available information.**
 
 - **This laboratory makes use of public available and limited amount information for educational purposes and in a local environment, meaning we are not making request to actual websites on the internet but to a local website that runs on your local computer.**
 
@@ -47,7 +47,7 @@ After reading all this information we can start
 
 ![[fig7.png]]
 
-After this a browser should open with the webpage where we are going to get the recipes. This webpage is deployed online, meaning all the information comes from the `recipes` folder that is in your local computer.
+After this a browser should open with the webpage where we are going to get the recipes. This webpage is deployed offline, meaning all the information comes from the `recipes` folder that is in your local computer.
 
 
 # INSTALL PYTHON
@@ -56,8 +56,10 @@ After this a browser should open with the webpage where we are going to get the 
 
     - press the windows key then the `r` key (`win + r`)
     - open a terminal by typing `cmd` then press `enter`
+
 ![[fig8.png]]
     - type in the terminal `python --version`
+
 ![[fig9.png]]
 
 if the terminal gives you a version then you have python installed, if not then go to the step `7`
@@ -103,3 +105,11 @@ print("hello from python")
 13. Save the file pressing `CTRL+s` then press the "run python file" button and check it prints the message "hello from python" in the console.
 
 ![[fig19.png]]
+
+# UPLOAD YOUR RESULTS TO TUIS
+
+14. Attach to TUIS the the following screenshots:
+
+- The recipes website working (step `5`)
+- The python version installation (step `6`)
+- python working on vscode (step `13`)
