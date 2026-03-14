@@ -40,6 +40,8 @@ var guessButton = document.getElementById("guess");
 
 guessButton.addEventListener("click", function () {
   var userLetter = userInput.value;
+  var link_element = document.getElementById("my_style");
+
   fillUserWord(userArray, userLetter, word);
   mirrorUserWord(userArray);
   userInput.value = "";
