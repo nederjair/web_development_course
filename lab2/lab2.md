@@ -2,13 +2,13 @@
 ## Preparations
 1. Make a new folder called `lab2`
 2. Paste the `index.html` file and `goose.png` image of the previous laboratory work (laboratory work 1) in the just created folder `lab2`
-![[Capture1.PNG]]
+![[Capture1_.PNG]]
 3. Open the  folder `lab2` with `vscode`
-![[Capture2.PNG]]
-![[Capture3.PNG]]
+![[Capture2_.PNG]]
+![[Capture3_.PNG]]
 4. Create a new file called `news.html` inside the `lab2` folder
-![[Capture4.PNG]]
-![[Capture5.PNG]]
+![[Capture4_.PNG]]
+![[Capture5_.PNG]]
 
 ## Main Goal
 Now that you’ve been introduced to the text elements, you can put them to work by marking up the News page for the Black Goose Bistro site. Get the starter text, once you have the text, follow the instructions listed after it.
@@ -70,22 +70,37 @@ The resulting page is should be something like this:
 
 3. The first thing we’ll do is identify the top-level heading and the list of links as the `header` for the document by wrapping them in a `header` element (don’t forget the closing tag). Within the `header`, the headline should be an `h1` and the list of links should be an unordered list (`ul`). Give the list more meaning by identifying it as the primary navigation for the site (`nav`).
 
+![[Capture1.PNG]]
+
 4. The News page has two posts titled “Summer Menu Items” and “Low and Slow.” Mark up each one as an `article`.
+![[Capture2.PNG]]
+![[Capture3.PNG]]
 
 5. Now we’ll get the first article into shape. Let’s create a header for this article that contains the heading (`h2` this time because we’ve moved down in the document hierarchy) and the publication information (`p`). Identify the publication date for the article with the `time` element.
+![[Capture4.PNG]]
 
 6. The content after the header is a simple paragraph. However, the menu has some interesting things going on. It is divided into two conceptual sections (Appetizers and Main Courses), so mark those up as `section` elements. Be careful that the final closing section tag (`</section>`) appears before the closing article tag (`</article>`) so the elements are nested correctly and don’t overlap. Finally, let’s identify the sections with `id` attributes. Name the first one “appetizers” and the second “maincourses”.
+![[Capture5.PNG]]
+![[Capture6.PNG]]
 
 7. With our sections in place, now we can mark up the content. We’re down to `h3` for the headings in each section. Choose the most appropriate list elements to describe the menu item names and their descriptions. Mark up the lists and each item within the lists.
+![[Capture7.PNG]]
+![[Capture8.PNG]]
 
 8. Now we can add a few fine details. Classify each price as “price” using span elements.
+![[Capture9.PNG]]
 
 9. Two of the dishes are new items. Change the double hyphens to an em dash character and mark up “new item!” as “strongly important.” Classify the title of each new dish as “newitem” (use the existing dt element; there is no need to add a span this time). This allows us to target menu titles with the “newitem” class and style them differently than other menu items.
+![[Capture10.PNG]]
 
 10. That takes care of the first article. The second article is already mostly marked up by default, but you should mark up the header with the appropriate heading and publication date information.
+![[Capture11.PNG]]
 
 11. Now make the remaining content that applies to the whole page a `footer`. Mark each line of content within the `footer` as a paragraph.
+![[Capture12.PNG]]
 
 12. Give the location and hours information some context by putting them in a `div` named “about.” Make the labels “Location” and “Hours” appear on a line by themselves by adding line breaks (`br`) after them. Mark up the hours with the `time` element (you don’t need the date or time zone portions).
+![[Capture13.PNG]]
 
 13. Finally, copyright information is typically “small print” on a document, so mark it up accordingly. As the final touch, add a copyright symbol after the word “copyright” using the keyboard or the `&copy`; character entity.
+![[Capture14.PNG]]
