@@ -1,0 +1,393 @@
+\documentclass[11pt,a4paper]{extarticle}
+
+\usepackage{iftex}
+\usepackage{showframe} % show the layout
+\usepackage{ulem}
+\usepackage{amssymb}
+\usepackage{setspace} % Required for \setstretch
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{graphicx}
+
+\ifPDFTeX
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{tempora}
+
+\else
+  \usepackage{fontspec}
+  \setmainfont{DejaVu Serif}
+  \setsansfont{DejaVu Sans}
+  \usepackage[russian]{babel}
+\fi
+
+\usepackage[left=20mm,right=10mm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.25}
+
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\ulinefill}[1]{\rule[-2pt]{#1}{0.4pt}}
+
+\begin{document}
+
+% --------------------------------------------------------------------
+% СТРАНИЦА 1: ТИТУЛЬНЫЙ ЛИСТ / СОГЛАСОВАНИЕ И ОСНОВНЫЕ СВЕДЕНИЯ
+% --------------------------------------------------------------------
+\center
+\textbf{ЗАШИТА ЛАБОРАТОРНОЙ РАБОТЫ №} \ulinefill{1cm}\\
+\noindent
+\textbf{Предмет: } \ulinefill{1cm}\\
+%\noindent
+%% ================= ЛЕВАЯ КОЛОНКА =================
+%\begin{minipage}[t]{0.48\textwidth}
+%    \begin{tabularx}{\textwidth}[t]{@{}X l@{}}
+%\multicolumn{2}{@{}l@{}}{\textbf{ПЛАН СОСТАВЛЕН:}}\\
+%\ulinefill{4cm} & <<\ulinefill{1.0cm}>> \ulinefill{1.5cm} 20 \ulinefill{0.5cm} г.\\[-5pt]
+%                    \scriptsize (подпись аспиранта)& \\ 
+%                    \vspace{0.5cm}\\
+%                    \multicolumn{2}{@{}l@{}}{\textbf{СОГЛАСОВАН:}}\\
+%    %\ulinefill{4cm} & <<\ulinefill{1.0cm}>> \ulinefill{1.5cm} 20 \ulinefill{0.5cm} г.\\[-5pt]
+%\setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture}\ulinefill{4cm} & <<\ulinefill{1.0cm}>> \ulinefill{1.5cm} 20 \ulinefill{0.5cm} г.\\[-5pt]
+%    \multicolumn{2}{@{}l@{}}{\scriptsize (подпись научного руководителя)}\\
+%\end{tabularx}
+%\end{minipage}%
+%\hfill
+%% ================= ПРАВАЯ КОЛОНКА =================
+%\begin{minipage}[t]{0.48\textwidth}
+%  \flushright
+%\textbf{УТВЕРЖДАЮ:}\\
+%\textbf{Ю. Н. Разумный}\\
+%\ulinefill{7cm}\\[-5pt]
+%\scriptsize (подпись и Ф.И.О. директора департамента)\normalsize\\[0.6em]
+%«\ulinefill{1cm}» \ulinefill{1.5cm} 20\ulinefill{0.5cm} г.\\[1.4em]
+%\textbf{План переутвержден:}\\[0.3em]
+%\ulinefill{0.8\textwidth}\\[-5pt]
+%\scriptsize (подпись и Ф.И.О. директора департамента/института)\normalsize\\[0.6em]
+%«\ulinefill{1cm}» \ulinefill{1.5cm} 20\ulinefill{0.5cm} г.\\
+%\end{minipage}
+%\begin{center}
+%    {\large \textbf{РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ}}\\
+%    {\large \textbf{ИНДИВИДУАЛЬНЫЙ РАБОЧИЙ ПЛАН АСПИРАНТА}}\\[-12pt]
+%\end{center}
+%\textbf{ФИО:} \textit{Мендес Флорес Недер Хаир}\\
+%\textbf{Код и наименование направления подготовки:} \textit{09.06.01 Информатика и вычислительная техника}\\
+%\textbf{Шифр и наименование профиля/научной специальности:} \textit{Системный анализ, управление и обработка информации, статистика}\\
+%\textbf{Департамент/институт:} \textit{Кафедра  механики и процессов управления}\\
+%\textbf{ОУП:} \textit{Инженерная академия}\\
+%\textbf{Научный руководитель (ФИО, уч. степень, ученое звание):} \textit{Иван Викторович Степанян, д.б.н., д.т.н., профессор}\\
+%\textbf{Зачислен приказом от} \textit{05.08.2019 г. № 551 А/И}\\
+%\textbf{Отчислен приказом от} \textit{24.07.2025 г. № 2771-A}\\
+%%\textbf{Отчислен приказом от} <<\ulinefill{0.6cm}>> \ulinefill{1cm} 20\ulinefill{0.6cm} г. № \ulinefill{3cm}\\
+%\textbf{Дополнительные приказы (при наличии):}\\
+%%Приказ о назначении научного руководителя от «\ulinefill{1cm}» \ulinefill{2cm} 2019 г. № 551\\
+%\textbf{Приказ о назначении научного руководителя от} \textit{05.08.2019 г. № 551 А/И}\\
+%\textbf{Приказ о смене научного руководителя от} \textit{27.01.2019 г. № 65 А/И}\\
+%\textbf{Приказ о предоставлении академического отпуска от} \textit{06.12.2022 г. № 2776-АИ}\\
+%\textbf{Приказ о продлении академического отпуска от} \textit{11.12.2023 г. № 3743-АИ}\\
+%\textbf{Приказ о выходе из академического отпуска от} \textit{18.12.2024 г. № 2728-АИ}\\
+%\textbf{Тема научно-квалификационной работы (диссертации):}
+%\textit{Метод вариационного рекуррентного генетического программирования для решения задачи синтеза автоматического управления дифференциальным колесным роботом} \\
+%Тема рассмотрена на заседании департамента/института «\ulinefill{1cm}» \ulinefill{2.5cm} 20\ulinefill{0.6cm} г., протокол № \ulinefill{1.5cm} \\
+%Тема утверждена Ученым советом ОУП «\ulinefill{1cm}» \ulinefill{2.5cm} 20\ulinefill{0.6cm} г., протокол № \ulinefill{1.5cm}\\
+%\begin{tabularx}{\textwidth}{@{}l l l l@{}}
+%    \textbf{Аттестация за 1-й год:} & \ulinefill{4.5cm} & <<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г. & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(0.9,-0.5){\includegraphics[height=1.5cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{4.5cm}\\[-5pt]
+%
+%%\setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture}\ulinefill{4cm} & <<\ulinefill{1.0cm}>> \ulinefill{1.5cm} 20 \ulinefill{0.5cm} г.\\[-5pt]
+%                                & \scriptsize (Приказ о переводе на следующий курс) &  & \scriptsize (подпись научного руководителя) \\
+%\textbf{Аттестация за 2-й год:} & \ulinefill{4.5cm} & <<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г. &  \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(0.9,-0.5){\includegraphics[height=1.1cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{4.5cm}\\[-5pt]
+%                                & \scriptsize (Приказ о переводе на следующий курс) &  & \scriptsize (подпись научного руководителя) \\
+%\textbf{Аттестация за 3-й год:} & \ulinefill{4.5cm} & <<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г. & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(0.9,-0.5){\includegraphics[height=1.3cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{4.5cm}\\[-5pt]
+%                                &\multicolumn{2}{@{}l}{\scriptsize (Приказ о переводе на следующий курс или о допуске к ГИА)} & \scriptsize (подпись научного руководителя) \\
+%\textbf{Аттестация за 4-й год:} & \ulinefill{4.5cm} & <<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г. & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(0.9,-0.5){\includegraphics[height=1.2cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{4.5cm}\\[-5pt]
+%                                &\multicolumn{2}{@{}l}{\scriptsize (Приказ о переводе на следующий курс или о допуске к ГИА)} & \scriptsize (подпись научного руководителя) \\
+%\textbf{Аттестация за 5-й год:} & \ulinefill{4.5cm} & <<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г. & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(0.9,-0.5){\includegraphics[height=1.1cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{4.5cm}\\[-5pt]
+%                                &\multicolumn{2}{@{}l}{\scriptsize (Приказ о переводе на следующий курс или о допуске к ГИА)} & \scriptsize (подпись научного руководителя) \\
+%\end{tabularx}
+%\noindent
+%\begin{tabularx}{\textwidth}{@{}l >{\centering\arraybackslash}X@{}}
+%  \multicolumn{2}{@{}l}{\textbf{В СВЯЗИ С УСПЕШНЫМ ВЫПОЛНЕНИЕМ УЧЕБНОГО ПЛАНА ВЫДАТЬ ДИПЛОМ ОБ}} \\
+%  \textbf{ОКОНЧАНИИ АСПИРАНТУРЫ}\enspace & \rule{\linewidth}{0.4pt} \\[-7pt]
+%  & \scriptsize (ФИО аспиранта)
+%\end{tabularx}
+%
+%\begingroup
+%% Redefine the X column to inject \setstretch{0.75} into the underlying p{} column
+%\renewcommand{\tabularxcolumn}[1]{>{\setstretch{0.35}\arraybackslash}p{#1}}
+%\begin{tabularx}{\textwidth}{@{}l@{}@{}c@{}c@{}l@{}}
+%	& Матюшин М. М. & &\\[-15pt]
+%    %Матюшин Максим Михайлович
+%    \textbf{Председатель ГЭК}&\ulinefill{6.5cm}/&\ulinefill{3.6cm}&Дата:<<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г.\\[-5pt]
+%                                & \scriptsize (Фамилия И.О. председателя ГЭК) & \scriptsize (подпись) &  \\
+%\end{tabularx}
+%\endgroup
+%\begin{tabularx}{\textwidth}{@{}l@{}@{}c@{}c@{}l@{}}
+%	& Разумный Ю. Н. & &\\[-15pt]
+%    \textbf{Руководитель кафедры}&\ulinefill{5.8cm}/&\ulinefill{3.6cm}&Дата:<<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г.\\[-5pt]
+%                                & \scriptsize (Фамилия И.О.) & \scriptsize (подпись) &  \\
+%\end{tabularx}
+%\begin{tabularx}{\textwidth}{@{}l@{}@{}c@{}c@{}l@{}}
+%	&Степанян И. В. &\setlength{\unitlength}{1.2cm}\begin{picture}(0,0)\put(-1.5,-1.0){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture}\\[-15pt]
+%    \textbf{Научный руководитель}&\ulinefill{5.8cm}/&\ulinefill{3.6cm}&Дата:<<\ulinefill{0.5cm}>> \ulinefill{1cm} 20\ulinefill{0.5cm} г.\\[-5pt]
+%                                & \scriptsize (Фамилия И.О.) & \scriptsize (подпись) &  \\
+%\end{tabularx}
+%\newpage
+%% --------------------------------------------------------------------
+%% СТРАНИЦА 2: ОБРАЗОВАТЕЛЬНАЯ КОМПОНЕНТА И ПРАКТИКИ
+%% --------------------------------------------------------------------
+%\begin{center}
+%    {\textbf{ОБРАЗОВАТЕЛЬНЫЙ КОМПОНЕНТ}}
+%\end{center}
+%% Start a group so the change only affects this specific table
+%\begingroup
+%% Redefine the X column to inject \setstretch{0.75} into the underlying p{} column
+%\renewcommand{\tabularxcolumn}[1]{>{\setstretch{0.75}\arraybackslash}p{#1}}
+%\begin{tabularx}{\textwidth}{@{}|X|X|X|X|@{}}
+%\hline
+%\textbf{Название дисциплины} & \textbf{Сроки прохождения аттестации по учебному плану} & \textbf{Дата прохождения аттестации} & \textbf{Результат прохождения аттестации \textit{(баллы/ECTS/оценка РФ)}, № и дата протокола) о сдачи кандидатского экзамена (только по соответствующим дисциплинам)} \\
+%\hline
+%\multicolumn{4}{|l|}{\textbf{Блок 1. Дисциплины (модули)}} \\
+%\hline
+%\multicolumn{4}{|l|}{\textit{Б1.Б Базовая часть}} \\
+%\hline
+%Иностранный язык (кандидатский минимум), \textbf{указать язык: } \textit{английский} & 1 семестр -- зачет с оценкой;\newline 2 семестр -- экзамен & & 88 (B), отлично\newline 95 (A), отлично \\
+%\hline
+%История и философия науки (кандидатский минимум) & 2 семестр -- экзамен & & 86 (B), отлично \\
+%\hline
+%%\multicolumn{4}{|l|}{\textit{Б1.В Вариативная часть (Кандидатский экзамен по специальности, указать название дисциплины: \newline Системный анализ, управление и обработка информации)}} \\
+%\multicolumn{4}{|p{\dimexpr\textwidth-2\arrayrulewidth\relax}|}{\textit{Б1.В Вариативная часть (Кандидатский экзамен по специальности, указать название дисциплины: \newline Системный анализ, управление и обработка информации)}} \\
+%\hline
+%\multicolumn{4}{|l|}{\textbf{обязательные дисциплины}} \\
+%\hline
+%Методология научных исследований & 2 семестр -- зачет с оценкой & & 96 (A), отлично \\
+%\hline
+%Приоритетные направления развития информатики и вычислительной техники & 3 семестр -- зачет с оценкой & & 86 (B), отлично \\
+%\hline
+%Методика преподавания информатики и вычислительной техники в высшей школе & 1 семестр -- зачет с оценкой & & 98 (A), отлично \\
+%\hline
+%Системный анализ, управление и обработка информации & 4 семестр -- экзамен & & 100 (A), отлично \\
+%\hline
+%\multicolumn{4}{|l|}{\textit{Б1.В.ДВ Вариативная часть (выборные/элективные дисциплины)}} \\
+%\hline
+%Русский язык в сфере профессиональной коммуникации & 3 семестр -- зачет с оценкой & & 86 (B), отлично \\
+%\hline
+%\multicolumn{4}{|l|}{\textbf{Блок 2. Практики}} \\
+%\hline
+%\multicolumn{4}{|l|}{\textit{Педагогическая практика}} \\
+%\hline
+%2 год, в объеме 324 часов & 4 семестр -- зачет с оценкой & & 90 (B), отлично\\
+%\hline
+%3 год, в объеме 216 часов & 5 семестр -- зачет с оценкой;\newline 6 семестр -- зачет с оценкой & & 90 (B), отлично\newline 70 (C), хорошо \\
+%\hline
+%\multicolumn{4}{|p{\dimexpr\textwidth-2\arrayrulewidth\relax}|}{\textit{Практика по получению профессиональных умений и опыта профессиональной деятельности \newline (научно-исследовательская)}} \\
+%\hline
+%1 год, в объеме 216 часов & 1 семестр -- зачет с оценкой;\newline 2 семестр -- зачет с оценкой & & 92 (B), отлично\newline 96 (A), отлично \\
+%\hline
+%\end{tabularx}
+%\endgroup
+%\newpage
+%\noindent\textbf{Блок 3. Научные исследования}\\
+%\noindent\textit{Первый год обучения:}\\
+%\noindent\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|p{1.8cm}|p{1.8cm}|>{\raggedright\arraybackslash}X|}
+%\hline
+%\textbf{№} & \textbf{Виды работ в соответствии с программой научных исследований} & \textbf{Форма отчетности/ показатель выполнения} & \textbf{План} & \textbf{Сроки, даты} & \textbf{Факт (отметка о выполнении научным руководителем или реквизиты документов)} \\
+%\hline
+%1. & Обсуждение в департаменте концепции диссертации и утверждение темы НКР на Ученом совете ОУП & Протокол заседания департамента. Протокол заседания Ученого совета ОУП & 1 семестр & 01.2020 & Выполнено \\
+%\hline
+%2. & Подготовка историографической и экспериментальной/источниковой базы диссертации & Доклад на департаменте & 2 семестр & 04.2020 & Выполнено \\
+%\hline
+%2. & Работа с научным руководителем & График взаимодействия & 1, 2 семестры & еженедельно & Выполнено \\
+%\hline
+%\end{tabularx}
+%
+%\vspace{0.5cm}
+%
+%\begin{tabularx}{\textwidth}{@{}l@{}ll@{}}
+%	\noindent Аттестация «\ulinefill{0.8cm}» \ulinefill{1.5cm} 20\ulinefill{0.5cm} г. с оценкой &«\ulinefill{3cm}» & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{5cm}\\
+%											 & \small{(Баллы/ECTS/Оценка)}  &\small{(подпись научного руководителя)}
+%\end{tabularx}
+%
+%\noindent\textit{Второй год обучения:}\\
+%\noindent\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|p{1.8cm}|p{1.8cm}|>{\raggedright\arraybackslash}X|}
+%\hline
+%\textbf{№} & \textbf{Виды работ в соответствии с программой научных исследований} & \textbf{Форма отчетности/ показатель выполнения} & \textbf{План} & \textbf{Сроки, даты} & \textbf{Факт (отметка о выполнении научным руководителем или реквизиты документов)} \\
+%\hline
+%1. & Научные публикации & Количество публикаций: всего/из них в международных БД & 1, 2 семестры & 2021 & Выполнено (Всего: 1, ВАК: 1) \\
+%\hline
+%2. & Подготовка теоретической части диссертации & Доклад на департаменте & 1 семестр & 12.2020 & Выполнено \\
+%\hline
+%3. & Планирование экспериментальной части диссертации & Доклад на департаменте & 2 семестр & 05.2021 & Выполнено \\
+%\hline
+%4. & Работа с научным руководителем & График взаимодействия & 1, 2 семестры & ежемесячно & Выполнено \\
+%\hline
+%\end{tabularx}
+%
+%\vspace{0.5cm}
+%\begin{tabularx}{\textwidth}{@{}l@{}ll@{}}
+%	\noindent Аттестация «\ulinefill{0.8cm}» \ulinefill{1.5cm} 20\ulinefill{0.5cm} г. с оценкой &«\ulinefill{3cm}» & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{5cm}\\
+%											 & \small{(Баллы/ECTS/Оценка)}  &\small{(подпись научного руководителя)}
+%\end{tabularx}
+%
+%\newpage
+%\noindent\textit{Третий год обучения:}
+%
+%\noindent\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|p{1.8cm}|p{1.8cm}|>{\raggedright\arraybackslash}X|}
+%\hline
+%\textbf{№} & \textbf{Виды работ в соответствии с программой научных исследований} & \textbf{Форма отчетности/ показатель выполнения} & \textbf{План} & \textbf{Сроки, даты} & \textbf{Факт (отметка о выполнении научным руководителем или реквизиты документов)} \\
+%\hline
+%2. & Проведение научных экспериментов & Оценка полученных результатов эксперимента & 1 семестр & 11.2021 & Выполнено \\
+%\hline
+%3. & Подготовка первичного варианта диссертации и автореферата & Доклад на департаменте & 2 семестр & 05.2022 & Выполнено \\
+%\hline
+%5. & Подготовка и предзащита научного доклада по итогам научных исследований & Протокол заседания департамента. & 2 семестр & & Перенесено (акад. отпуск) \\
+%\hline
+%6. & Работа с научным руководителем & График взаимодействия & 1, 2 семестры & ежемесячно & Выполнено \\
+%\hline
+%\end{tabularx}
+%
+%\vspace{0.5cm}
+%\begin{tabularx}{\textwidth}{@{}l@{}ll@{}}
+%	\noindent Аттестация «\ulinefill{0.8cm}» \ulinefill{1.5cm} 20\ulinefill{0.5cm} г. с оценкой &«\ulinefill{3cm}» & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{5cm}\\
+%											 & \small{(Баллы/ECTS/Оценка)}  &\small{(подпись научного руководителя)}
+%\end{tabularx}
+%
+%\noindent\textit{Четвертый год обучения:}
+%
+%\noindent\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|p{1.8cm}|p{2.2cm}|>{\raggedright\arraybackslash}X|}
+%\hline
+%\textbf{№} & \textbf{Виды работ в соответствии с программой научных исследований} & \textbf{Форма отчетности/ показатель выполнения} & \textbf{План} & \textbf{Сроки, даты} & \textbf{Факт (отметка о выполнении научным руководителем или реквизиты документов)} \\
+%\hline
+%1. & Научные публикации & Количество публикаций: всего/из них в международных БД & 1, 2 семестры & 2024--2025 & Выполнено (Всего: 6, Scopus: 4) \\
+%\hline
+%2. & Выступление на научных конференциях & Количество конференций & 1, 2 семестры & 2023 & Выполнено (4 конф.) \\
+%\hline
+%3. & Работа с научным руководителем & График взаимодействия & 1, 2 семестры & еженедельно & Выполнено \\
+%\hline
+%4. & Подготовка научного доклада по итогам научных исследований & Доклад на департаменте & 1 семестр & 03.2025 & Выполнено \\
+%\hline
+%5. & Предзащита научного доклада по итогам научных исследований & Протокол заседания департамента. & 2 семестр & 05.2025 & Выполнено \\
+%\hline
+%6. & Работа с научным руководителем & График взаимодействия & 1, 2 семестры & еженедельно & Выполнено \\
+%\hline
+%\end{tabularx}
+%
+%\vspace{0.5cm}
+%\begin{tabularx}{\textwidth}{@{}l@{}ll@{}}
+%	\noindent Аттестация «\ulinefill{0.8cm}» \ulinefill{1.5cm} 20\ulinefill{0.5cm} г. с оценкой &«\ulinefill{3cm}» & \setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \ulinefill{5cm}\\
+%											 & \small{(Баллы/ECTS/Оценка)}  &\small{(подпись научного руководителя)}
+%\end{tabularx}
+%
+%\newpage
+%\noindent\textbf{Блок 4. Государственная итоговая аттестация}
+%
+%\vspace{0.3cm}
+%\noindent Государственный экзамен по \textit{2.3.1 Системный анализ, управление и обработка информации, статистика} \\
+%
+%\begin{tabularx}{\textwidth}{@{}l@{}ll@{}}
+%	\noindent Сдан «\ulinefill{0.8cm}» \ulinefill{1.5cm} 20\ulinefill{0.5cm} г. на &«\ulinefill{3cm}» & \ulinefill{5cm}\\
+%											 & \small{(Баллы/ECTS/Оценка)}  &\small{(подпись председателя ГЭК)}
+%\end{tabularx}
+%
+%\vspace{0.5cm}
+%\noindent Представление научного доклада об основных результатах подготовленной научно-квалификационной работы на заседании ГЭК от «\underline{\hspace{0.5cm}}» \underline{\hspace{1.5cm}} 20\underline{\hspace{0.5cm}} г. протокол № \underline{\hspace{2cm}} \\
+%
+%\begin{tabularx}{\textwidth}{@{}l@{}@{}c@{}c@{}}
+%    <<\ulinefill{4.0cm}>>&\ulinefill{6.0cm}/&\ulinefill{7.4cm}\\[-5pt]
+%\small{(Баллы/ECTS/Оценка)}& \scriptsize (подпись председателя ГЭК) & \scriptsize (рекомендация к защите диссертации)\\
+%\end{tabularx}
+%\begin{center}
+%    \textbf{РЕЗУЛЬТАТЫ НАУЧНЫХ ИССЛЕДОВАНИЙ}
+%\end{center}
+%\noindent\textbf{1 - Научные публикации (название, где опубликовано, объем)}
+%\begin{enumerate}
+%    \item Синтез системы пространственной стабилизации мобильного робота на основе обучения методом символьной регрессии // Вестник Российского университета дружбы народов. Серия: Инженерные исследования, Том 22, № 2 (2021), 129-138.
+%    \item Problem of Control Synthesis of Stabilization System for a Nonholonomic Mobile Robot: An Autonomous Solution via Modified Synthesized Genetic Programming Method // International Journal of Intelligent Engineering and Systems 18, no. 6 (2025): 350-365.
+%    \item Unsupervised Machine Learning Control Techniques for Solving the General Synthesis of Control System Problem // International Journal of Intelligent Engineering and Systems 17, no. 3 (2024): 401-416.
+%    \item Elevating Mobile Robotics: Pioneering Applications of Artificial Intelligence and Machine Learning // Revue d'Intelligence Artificielle 38, no. 1 (2024): 351-363.
+%    \item A comparative study for data approximation between two explainable artificial intelligence approaches // AIP Conference Proceedings 3051, no. 1 (2024): 040008.
+%    \item Новый метод решения проблемы переобучения с использованием символической регрессии, применяемой в машинном обучении для управления движением роботов // Science and Business: Developments Ways, no. 2(152), 2024.
+%    \item Исследование методов машинного обучения на основе генетического программирования и символьной регрессии для управления мобильными роботами // Science and Business: Developments Ways, no. 3(153), 2024.
+%\end{enumerate}
+%\noindent\textbf{2 - Научные публикации в иных изданиях (название, где опубликовано, объем):} \\
+%\textit{Нет}
+%
+%\vspace{0.5cm}
+%\noindent\textbf{3 - Выступления на НТК (тема, название НТК, дата, место проведения):}
+%\begin{enumerate}
+%    \item Using Symbolic Regression Methods for Machine Learning to Control Robot Motion: Advantages and Disadvantages // The XIV International Scientific and Practical Conference “Modern strategies and digital transformations of sustainable development of society, education and science”. – Moscow: December 12, 2023.
+%    \item Comparison of recurrent neural networks and symbolic regression methods // The XXII International Scientific and Practical Conference “Challenges of our time and development strategies of society in the conditions of the new reality”. – Moscow: December 15, 2023.
+%    \item Problem of the Interpretability vs. Accuracy Trade-off in Symbolic Regression in robot motion: causes and solution // The II International Scientific and Practical Conference “Modern research: theory, practice, results”. – Moscow: December 29, 2023.
+%    \item The 3rd International Conference on Engineering and Science // Al-SAMAWA, IRAQ: 3-4 May 2023.
+%\end{enumerate}
+%
+%\vspace{0.5cm}
+%\noindent\textbf{4 - Участие в научно-исследовательских грантах (тема, грантодатель, ФИО руководителя):} \\
+%\textit{Нет}
+%
+%\vspace{0.5cm}
+%\noindent\textbf{5 - Участие в программах академической мобильности (даты, продолжительность прохождения, место стажировки, если двойное научное руководство фамилия и должность второго руководителя):} \\
+%\textit{Нет}
+%
+%\vspace{0.5cm}
+%\noindent\textbf{6 - Доклад по теме диссертационного исследования, обсуждение и рекомендация к защите диссертации на заседании департамента:}
+%
+%\vspace{0.3cm}
+%\noindent\textbf{6.1. Обсуждение текста диссертации} «\underline{\hspace{1cm}}» \underline{\hspace{2cm}} 20\underline{\hspace{1cm}} г. \\
+%Выступили преподаватели департамента (фамилии), присутствующие: \underline{\hspace{6cm}} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%Постановили:\\ 
+%\vspace{0.2cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%
+%\vspace{0.5cm}
+%\setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \underline{\hspace{6cm}} \\
+%{\small (подпись научного руководителя)}
+%
+%\vspace{0.3cm}
+%\noindent\textbf{6.2. Рекомендация к защите диссертации} «\underline{\hspace{1cm}}» \underline{\hspace{2cm}} 20\underline{\hspace{1cm}} г. \\
+%Выступили преподаватели департамента (фамилии), присутствующие: \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%Постановили: \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\ulinefill{18cm} \\
+%\vspace{0.2cm} \\
+%\setlength{\unitlength}{1cm}\begin{picture}(0,0)\put(-0.5,-0.8){\includegraphics[height=2.0cm, keepaspectratio]{sign_stepanian.png}}\end{picture} \underline{\hspace{6cm}} \\
+%{\small (подпись научного руководителя)}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\newpage
+%
+%
+\end{document}

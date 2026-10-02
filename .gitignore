@@ -1,2 +1,5 @@
 **obsidian
 **.DS_Store
+**.aux
+**.log
+**.synctex.gz
