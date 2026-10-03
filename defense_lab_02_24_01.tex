@@ -1,0 +1,229 @@
+\documentclass[14pt,a4paper]{extarticle}
+
+\usepackage{iftex}
+%\usepackage{showframe} % show the layout
+\usepackage{ulem}
+\usepackage{amssymb}
+\usepackage{setspace} % Required for \setstretch
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{makecell} 
+\renewcommand\theadfont{\bfseries} % Put this in your preamble
+
+\ifPDFTeX
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{tempora}
+
+\else
+  \usepackage{fontspec}
+  \setmainfont{DejaVu Serif}
+  \setsansfont{DejaVu Sans}
+  \usepackage[russian]{babel}
+\fi
+
+\usepackage[left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm]{geometry}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.25}
+
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\ulinefill}[1]{\rule[-2pt]{#1}{0.4pt}}
+
+\begin{document}
+\begin{tabularx}{\textwidth}{|l|X|l|X|l|X|}
+  \multicolumn{6}{c}{\textbf{ЗАШИТА ЛАБОРАТОРНОЙ РАБОТЫ № 1}}\\
+  \hline
+  \textbf{Предмет:} & \multicolumn{5}{l|}{Основы веб-разработки}\\
+  \hline
+  \textbf{Группа:}&РФЛбд-02-24-01&\textbf{Время:}&15:00 --- 16:20&\textbf{Ауд:}&ФРЯ-208\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|c|l|X|}
+  \hline
+  \thead[l]{День семинара \\ (по разписаню):}&суббота&\thead[l]{Срок\\защиты:}& \makecell[c]{12.09.2026 --- 19.09.2026}\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|p{3cm}|X|}
+  \hline
+  \thead[c]{ФИО}&\thead[c]{Дата}& \thead[c]{подпись}\\
+  \hline
+Апалуп Анастасия Алексеевна&&\\
+\hline
+Исакова Асият Рашидовна&&\\
+\hline
+Еремеев Артем Валентинович&&\\
+\hline
+Гаврилова Анастасия Владимировна&&\\
+\hline
+Зорько Полина Григорьевна&&\\
+\hline
+\end{tabularx}
+
+\vfill
+
+\begin{tabularx}{\textwidth}{|l|X|l|X|l|X|}
+  \multicolumn{6}{c}{\textbf{ЗАШИТА ЛАБОРАТОРНОЙ РАБОТЫ № 2}}\\
+  \hline
+  \textbf{Предмет:} & \multicolumn{5}{l|}{Основы веб-разработки}\\
+  \hline
+  \textbf{Группа:}&РФЛбд-02-24-01&\textbf{Время:}&15:00 --- 16:20&\textbf{Ауд:}&ФРЯ-208\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|c|l|X|}
+  \hline
+  \thead[l]{День семинара \\ (по разписаню):}&суббота&\thead[l]{Срок\\защиты:}& \makecell[c]{19.09.2026 --- 26.09.2026}\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|p{3cm}|X|}
+  \hline
+  \thead[c]{ФИО}&\thead[c]{Дата}& \thead[c]{подпись}\\
+  \hline
+Апалуп Анастасия Алексеевна&&\\
+\hline
+Исакова Асият Рашидовна&&\\
+\hline
+Еремеев Артем Валентинович&&\\
+\hline
+Гаврилова Анастасия Владимировна&&\\
+\hline
+Зорько Полина Григорьевна&&\\
+\hline
+\end{tabularx}
+
+\vfill
+
+\begin{tabularx}{\textwidth}{|l|X|l|X|l|X|}
+  \multicolumn{6}{c}{\textbf{ЗАШИТА ЛАБОРАТОРНОЙ РАБОТЫ № 3}}\\
+  \hline
+  \textbf{Предмет:} & \multicolumn{5}{l|}{Основы веб-разработки}\\
+  \hline
+  \textbf{Группа:}&РФЛбд-02-24-01&\textbf{Время:}&15:00 --- 16:20&\textbf{Ауд:}&ФРЯ-208\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|c|l|X|}
+  \hline
+  \thead[l]{День семинара \\ (по разписаню):}&суббота&\thead[l]{Срок\\защиты:}& \makecell[c]{26.09.2026 --- 03.10.2026}\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|p{3cm}|X|}
+  \hline
+  \thead[c]{ФИО}&\thead[c]{Дата}& \thead[c]{подпись}\\
+  \hline
+Апалуп Анастасия Алексеевна&&\\
+\hline
+Исакова Асият Рашидовна&&\\
+\hline
+Еремеев Артем Валентинович&&\\
+\hline
+Гаврилова Анастасия Владимировна&&\\
+\hline
+Зорько Полина Григорьевна&&\\
+\hline
+\end{tabularx}
+
+\vfill
+
+\begin{tabularx}{\textwidth}{|l|X|l|X|l|X|}
+  \multicolumn{6}{c}{\textbf{ЗАШИТА ЛАБОРАТОРНОЙ РАБОТЫ № 4}}\\
+  \hline
+  \textbf{Предмет:} & \multicolumn{5}{l|}{Основы веб-разработки}\\
+  \hline
+  \textbf{Группа:}&РФЛбд-02-24-01&\textbf{Время:}&15:00 --- 16:20&\textbf{Ауд:}&ФРЯ-208\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|c|l|X|}
+  \hline
+  \thead[l]{День семинара \\ (по разписаню):}&суббота&\thead[l]{Срок\\защиты:}& \makecell[c]{03.10.2026 --- 10.10.2026}\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|p{3cm}|X|}
+  \hline
+  \thead[c]{ФИО}&\thead[c]{Дата}& \thead[c]{подпись}\\
+  \hline
+Апалуп Анастасия Алексеевна&&\\
+\hline
+Исакова Асият Рашидовна&&\\
+\hline
+Еремеев Артем Валентинович&&\\
+\hline
+Гаврилова Анастасия Владимировна&&\\
+\hline
+Зорько Полина Григорьевна&&\\
+\hline
+\end{tabularx}
+
+\vfill
+
+\begin{tabularx}{\textwidth}{|l|X|l|X|l|X|}
+  \multicolumn{6}{c}{\textbf{ЗАШИТА ЛАБОРАТОРНОЙ РАБОТЫ № 5}}\\
+  \hline
+  \textbf{Предмет:} & \multicolumn{5}{l|}{Основы веб-разработки}\\
+  \hline
+  \textbf{Группа:}&РФЛбд-02-24-01&\textbf{Время:}&15:00 --- 16:20&\textbf{Ауд:}&ФРЯ-208\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|c|l|X|}
+  \hline
+  \thead[l]{День семинара \\ (по разписаню):}&суббота&\thead[l]{Срок\\защиты:}& \makecell[c]{10.10.2026 --- 17.10.2026}\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|p{3cm}|X|}
+  \hline
+  \thead[c]{ФИО}&\thead[c]{Дата}& \thead[c]{подпись}\\
+  \hline
+Апалуп Анастасия Алексеевна&&\\
+\hline
+Исакова Асият Рашидовна&&\\
+\hline
+Еремеев Артем Валентинович&&\\
+\hline
+Гаврилова Анастасия Владимировна&&\\
+\hline
+Зорько Полина Григорьевна&&\\
+\hline
+\end{tabularx}
+
+\vfill
+
+\begin{tabularx}{\textwidth}{|l|X|l|X|l|X|}
+  \multicolumn{6}{c}{\textbf{ЗАШИТА ЛАБОРАТОРНОЙ РАБОТЫ № 6}}\\
+  \hline
+  \textbf{Предмет:} & \multicolumn{5}{l|}{Основы веб-разработки}\\
+  \hline
+  \textbf{Группа:}&РФЛбд-02-24-01&\textbf{Время:}&15:00 --- 16:20&\textbf{Ауд:}&ФРЯ-208\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|c|l|X|}
+  \hline
+  \thead[l]{День семинара \\ (по разписаню):}&суббота&\thead[l]{Срок\\защиты:}& \makecell[c]{17.10.2026 --- 24.10.2026}\\
+  \hline
+\end{tabularx}
+\begin{tabularx}{\textwidth}{|l|p{3cm}|X|}
+  \hline
+  \thead[c]{ФИО}&\thead[c]{Дата}& \thead[c]{подпись}\\
+  \hline
+Апалуп Анастасия Алексеевна&&\\
+\hline
+Исакова Асият Рашидовна&&\\
+\hline
+Еремеев Артем Валентинович&&\\
+\hline
+Гаврилова Анастасия Владимировна&&\\
+\hline
+Зорько Полина Григорьевна&&\\
+\hline
+\end{tabularx}
+\end{document}
